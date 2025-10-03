@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import { Metadata } from 'next';
+import { getCharacters } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Duet Night Abyss Guide Hub',
@@ -30,6 +31,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
-  redirect('/tier-list');
+export default async function Home() {
+  try {
+    // Try to fetch characters to check if data exists
+    const characters = await getCharacters();
+    if (characters && characters.length > 0) {
+      redirect('/tier-list');
+    } else {
+      redirect('/setup');
+    }
+  } catch (error) {
+    // If there's an error fetching data, redirect to setup
+    redirect('/setup');
+  }
 }

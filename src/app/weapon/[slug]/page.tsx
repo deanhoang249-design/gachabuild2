@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { weapons } from '@/data/weapons';
+import { getWeaponBySlug, getWeaponSlugs } from '@/lib/data';
 import { generateMetadata } from './metadata';
 import WeaponDetailClient from '@/components/WeaponDetailClient';
 
@@ -8,8 +8,9 @@ export { generateMetadata };
 
 // Generate static params for all weapons
 export async function generateStaticParams() {
-  return weapons.map((weapon) => ({
-    slug: weapon.id,
+  const slugs = await getWeaponSlugs();
+  return slugs.map((slug) => ({
+    slug,
   }));
 }
 
@@ -21,7 +22,7 @@ interface WeaponDetailPageProps {
 
 export default async function WeaponDetailPage({ params }: WeaponDetailPageProps) {
   const { slug } = await params;
-  const weapon = weapons.find((w) => w.id === slug);
+  const weapon = await getWeaponBySlug(slug);
 
   if (!weapon) {
     notFound();

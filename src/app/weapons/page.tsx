@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import WeaponsPageClient from './WeaponsPageClient';
+import { getWeapons } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Weapons | Duet Night Abyss Character Guide',
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function WeaponsPage() {
-  return <WeaponsPageClient />;
+export default async function WeaponsPage() {
+  const weapons = await getWeapons();
+  
+  return <WeaponsPageClient weapons={weapons} />;
 }

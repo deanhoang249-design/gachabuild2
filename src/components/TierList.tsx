@@ -1,12 +1,16 @@
 'use client';
 
-import { Character } from '@/data/characters';
-import { tierlist, getCharactersByTier, getAllTiers } from '@/data/tierlist';
+import { Character } from '@/lib/data';
+import { tierlist, getAllTiers } from '@/data/tierlist';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import CharacterFilters from './CharacterFilters';
+
+interface TierListProps {
+  characters: Character[];
+}
 
 interface TierCardProps {
   character: Character;
@@ -75,13 +79,13 @@ function TierCard({ character }: TierCardProps) {
   return (
     <div className="group relative">
       <Link 
-        href={`/characters/${character.id}?from=tier-list`}
-        className="block bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer"
+        href={`/characters/${character.slug.current}?from=tier-list`}
+        className="block bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-200 overflow-hidden cursor-pointer"
       >
         {/* Character Image */}
-        <div className="relative h-48 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center p-4 overflow-hidden">
+        <div className="relative h-48 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4 overflow-hidden">
           <Image
-            src={character.image}
+            src={character.image || '/characters/placeholder.svg'}
             alt={`${t(character.name)} character portrait`}
             width={200}
             height={200}
@@ -104,7 +108,7 @@ function TierCard({ character }: TierCardProps) {
         
         {/* Character Info */}
         <div className="p-4">
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-1">
+          <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600:text-blue-400 transition-colors line-clamp-1">
             {t(character.name)}
           </h3>
           
@@ -131,7 +135,7 @@ function TierCard({ character }: TierCardProps) {
           </div>
           
           {/* Weapon Info */}
-          <div className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+          <div className="text-sm text-gray-600 mb-3">
             <span className="font-medium">Weapon:</span> {character.weapon}
           </div>
         </div>
@@ -210,10 +214,10 @@ function TierRow({ tier, characters }: TierRowProps) {
       </div>
 
       {/* Character Cards Grid */}
-      <div className="bg-white dark:bg-gray-800 rounded-b-xl border-x border-b border-gray-200 dark:border-gray-700 p-6">
+      <div className="bg-white rounded-b-xl border-x border-b border-gray-200 p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6" role="list" aria-label={`${tier} tier characters`}>
           {characters.map((character) => (
-            <TierCard key={character.id} character={character} />
+            <TierCard key={character._id} character={character} />
           ))}
         </div>
       </div>
@@ -221,7 +225,7 @@ function TierRow({ tier, characters }: TierRowProps) {
   );
 }
 
-export default function TierList() {
+export default function TierList({ characters }: TierListProps) {
   const tiers = getAllTiers();
   const [searchTerm, setSearchTerm] = useState('');
   const [roleFilter, setRoleFilter] = useState('');
@@ -229,10 +233,16 @@ export default function TierList() {
 
   // Filter characters based on search and filters
   const getFilteredCharacters = (tier: keyof typeof tierlist) => {
-    let characters = getCharactersByTier(tier);
+    // Get character IDs for this tier
+    const tierCharacterIds = tierlist[tier];
+    
+    // Filter characters that are in this tier
+    let tierCharacters = characters.filter(char => 
+      tierCharacterIds.includes(char.slug.current)
+    );
     
     if (searchTerm) {
-      characters = characters.filter(char => 
+      tierCharacters = tierCharacters.filter(char => 
         char.name.en.toLowerCase().includes(searchTerm.toLowerCase()) ||
         char.name.vi.toLowerCase().includes(searchTerm.toLowerCase()) ||
         char.role.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -242,37 +252,37 @@ export default function TierList() {
     }
     
     if (roleFilter) {
-      characters = characters.filter(char => 
+      tierCharacters = tierCharacters.filter(char => 
         char.role.toLowerCase() === roleFilter.toLowerCase()
       );
     }
 
     if (elementFilter) {
-      characters = characters.filter(char => 
+      tierCharacters = tierCharacters.filter(char => 
         char.element?.toLowerCase() === elementFilter.toLowerCase()
       );
     }
     
-    return characters;
+    return tierCharacters;
   };
 
   const filteredTiers = tiers;
 
   return (
-    <main id="tierlist" className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
+    <main id="tierlist" className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 font-['Poppins',sans-serif]">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Poppins',sans-serif]">
             Duet Night Abyss Character Tier List
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
             Discover the most powerful characters in Duet Night Abyss, ranked by their effectiveness in combat. 
             Find the best DNA characters for your team with our comprehensive tier list guide.
           </p>
           
           {/* Last Updated Note */}
-          <div className="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium">
+          <div className="inline-flex items-center gap-2 bg-blue-50/20 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
@@ -305,31 +315,31 @@ export default function TierList() {
 
         {/* Assumptions Section */}
         <section className="mt-16" aria-labelledby="assumptions-heading">
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 border border-gray-200 dark:border-gray-700">
-            <h2 id="assumptions-heading" className="text-2xl font-bold text-gray-900 dark:text-white mb-6 font-['Poppins',sans-serif]">Tier List Assumptions</h2>
+          <div className="bg-white rounded-xl shadow-md p-8 border border-gray-200">
+            <h2 id="assumptions-heading" className="text-2xl font-bold text-gray-900 mb-6 font-['Poppins',sans-serif]">Tier List Assumptions</h2>
             
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border border-blue-200 dark:border-blue-700">
-                <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-3">5★ Assumptions</h3>
-                <p className="text-blue-700 dark:text-blue-300 text-sm leading-relaxed">
+              <div className="bg-blue-50/20 p-6 rounded-lg border border-blue-200">
+                <h3 className="text-lg font-semibold text-blue-800 mb-3">5★ Assumptions</h3>
+                <p className="text-blue-700 text-sm leading-relaxed">
                   All 5-star characters are evaluated at their base rarity with level 1 constellation, 
                   level 10/10/10 skills, and standard equipment. Team composition considers optimal 
                   synergy and role effectiveness in various combat scenarios.
                 </p>
               </div>
               
-              <div className="bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border border-purple-200 dark:border-purple-700">
-                <h3 className="text-lg font-semibold text-purple-800 dark:text-purple-300 mb-3">4★ Assumptions</h3>
-                <p className="text-purple-700 dark:text-purple-300 text-sm leading-relaxed">
+              <div className="bg-purple-50/20 p-6 rounded-lg border border-purple-200">
+                <h3 className="text-lg font-semibold text-purple-800 mb-3">4★ Assumptions</h3>
+                <p className="text-purple-700 text-sm leading-relaxed">
                   All 4-star characters are evaluated at constellation 1, level 10/10/10 skills, 
                   and standard equipment. Performance is assessed based on their utility and 
                   effectiveness in their respective roles.
                 </p>
               </div>
               
-              <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-200 dark:border-green-700">
-                <h3 className="text-lg font-semibold text-green-800 dark:text-green-300 mb-3">3★ and Below Assumptions</h3>
-                <p className="text-green-700 dark:text-green-300 text-sm leading-relaxed">
+              <div className="bg-green-50/20 p-6 rounded-lg border border-green-200">
+                <h3 className="text-lg font-semibold text-green-800 mb-3">3★ and Below Assumptions</h3>
+                <p className="text-green-700 text-sm leading-relaxed">
                   Lower rarity characters are evaluated at maximum constellation, level 10/10/10 skills, 
                   and standard equipment. Their value is assessed based on accessibility and 
                   effectiveness relative to higher rarity alternatives.
@@ -337,8 +347,8 @@ export default function TierList() {
               </div>
             </div>
             
-            <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-600">
-              <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
+            <div className="mt-6 pt-4 border-t border-gray-200">
+              <p className="text-sm text-gray-500 text-center">
                 *Characters in the same tier are listed in descending rarity, and aside from this are in no particular order.
               </p>
             </div>

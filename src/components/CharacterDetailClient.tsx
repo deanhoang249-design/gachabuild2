@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, Suspense } from 'react';
-import { Character } from '@/data/characters';
+import { Character } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -55,57 +55,57 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
   const getRoleBadgeColor = (role: string) => {
     switch (role.toLowerCase()) {
       case 'vanguard':
-        return 'bg-red-100 text-red-700 border-red-200 dark:bg-red-900 dark:text-red-300 dark:border-red-700';
+        return 'bg-red-100 text-red-700 border-red-200';
       case 'support':
-        return 'bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900 dark:text-blue-300 dark:border-blue-700';
+        return 'bg-blue-100 text-blue-700 border-blue-200';
       case 'annihilator':
-        return 'bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900 dark:text-purple-300 dark:border-purple-700';
+        return 'bg-purple-100 text-purple-700 border-purple-200';
       default:
-        return 'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600';
+        return 'bg-gray-100 text-gray-700 border-gray-200';
     }
   };
 
   const getElementBadgeColor = (element: string) => {
     switch (element.toLowerCase()) {
       case 'fire':
-        return 'bg-orange-100 text-orange-700 border-orange-200 dark:bg-orange-900 dark:text-orange-300 dark:border-orange-700';
+        return 'bg-orange-100 text-orange-700 border-orange-200';
       case 'water':
-        return 'bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900 dark:text-blue-300 dark:border-blue-700';
+        return 'bg-blue-100 text-blue-700 border-blue-200';
       case 'ice':
-        return 'bg-cyan-100 text-cyan-700 border-cyan-200 dark:bg-cyan-900 dark:text-cyan-300 dark:border-cyan-700';
+        return 'bg-cyan-100 text-cyan-700 border-cyan-200';
       case 'wind':
-        return 'bg-green-100 text-green-700 border-green-200 dark:bg-green-900 dark:text-green-300 dark:border-green-700';
+        return 'bg-green-100 text-green-700 border-green-200';
       case 'earth':
-        return 'bg-yellow-100 text-yellow-700 border-yellow-200 dark:bg-yellow-900 dark:text-yellow-300 dark:border-yellow-700';
+        return 'bg-yellow-100 text-yellow-700 border-yellow-200';
       case 'light':
-        return 'bg-yellow-100 text-yellow-700 border-yellow-200 dark:bg-yellow-900 dark:text-yellow-300 dark:border-yellow-700';
+        return 'bg-yellow-100 text-yellow-700 border-yellow-200';
       case 'dark':
-        return 'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600';
+        return 'bg-gray-100 text-gray-700 border-gray-200';
       case 'psychic':
-        return 'bg-pink-100 text-pink-700 border-pink-200 dark:bg-pink-900 dark:text-pink-300 dark:border-pink-700';
+        return 'bg-pink-100 text-pink-700 border-pink-200';
       case 'moon':
-        return 'bg-indigo-100 text-indigo-700 border-indigo-200 dark:bg-indigo-900 dark:text-indigo-300 dark:border-indigo-700';
+        return 'bg-indigo-100 text-indigo-700 border-indigo-200';
       case 'sound':
-        return 'bg-violet-100 text-violet-700 border-violet-200 dark:bg-violet-900 dark:text-violet-300 dark:border-violet-700';
+        return 'bg-violet-100 text-violet-700 border-violet-200';
       case 'anemo':
-        return 'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900 dark:text-emerald-300 dark:border-emerald-700';
+        return 'bg-emerald-100 text-emerald-700 border-emerald-200';
       case 'electro':
-        return 'bg-yellow-100 text-yellow-700 border-yellow-200 dark:bg-yellow-900 dark:text-yellow-300 dark:border-yellow-700';
+        return 'bg-yellow-100 text-yellow-700 border-yellow-200';
       default:
-        return 'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600';
+        return 'bg-gray-100 text-gray-700 border-gray-200';
     }
   };
 
   const getRarityBadgeColor = (rarity: string) => {
     switch (rarity) {
       case '5★':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-300 dark:bg-yellow-900 dark:text-yellow-200 dark:border-yellow-700';
+        return 'bg-yellow-100 text-yellow-800 border-yellow-300';
       case '4★':
-        return 'bg-purple-100 text-purple-800 border-purple-300 dark:bg-purple-900 dark:text-purple-200 dark:border-purple-700';
+        return 'bg-purple-100 text-purple-800 border-purple-300';
       case '3★':
-        return 'bg-blue-100 text-blue-800 border-blue-300 dark:bg-blue-900 dark:text-blue-200 dark:border-blue-700';
+        return 'bg-blue-100 text-blue-800 border-blue-300';
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600';
+        return 'bg-gray-100 text-gray-800 border-gray-300';
     }
   };
 
@@ -145,26 +145,26 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-50">
       {/* Breadcrumb Navigation */}
-      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-40">
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <nav className="flex items-center space-x-2 text-sm">
             <Link 
               href="/" 
-              className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="text-gray-500 hover:text-blue-600:text-blue-400 transition-colors"
             >
               Home
             </Link>
-            <span className="text-gray-400 dark:text-gray-500">/</span>
+            <span className="text-gray-400">/</span>
             <Link 
               href={`/${from}`}
-              className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              className="text-gray-500 hover:text-blue-600:text-blue-400 transition-colors"
             >
               {from === 'characters' ? (language === 'vi' ? 'Danh Sách Nhân Vật' : 'Character List') : (language === 'vi' ? 'Bảng Xếp Hạng' : 'Tier List')}
             </Link>
-            <span className="text-gray-400 dark:text-gray-500">/</span>
-            <span className="text-gray-900 dark:text-white font-medium">{t(character.name)}</span>
+            <span className="text-gray-400">/</span>
+            <span className="text-gray-900 font-medium">{t(character.name)}</span>
           </nav>
         </div>
       </div>
@@ -174,7 +174,7 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
         <div className="mb-6">
           <Link 
             href={`/${from}`}
-            className="inline-flex items-center text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors font-medium"
+            className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800:text-blue-300 transition-colors font-medium"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -188,13 +188,13 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
 
         {/* Character Header */}
         <div className="mb-8">
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-200 dark:border-gray-700">
+          <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
             <div className="flex flex-col lg:flex-row gap-6">
               {/* Character Image */}
               <div className="lg:w-72 flex-shrink-0">
-                <div className="relative h-72 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-600 rounded-xl flex items-center justify-center overflow-hidden">
+                <div className="relative h-72 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl flex items-center justify-center overflow-hidden">
                   <Image
-                    src={character.image}
+                    src={character.image || '/characters/placeholder.svg'}
                     alt={`${t(character.name)} character portrait`}
                     width={280}
                     height={280}
@@ -209,7 +209,7 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
 
               {/* Character Info */}
               <div className="flex-1">
-                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-['Poppins',sans-serif]">
+                <h1 className="text-3xl font-bold text-gray-900 mb-4 font-['Poppins',sans-serif]">
                   {t(character.name)}
                 </h1>
                 
@@ -233,17 +233,17 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
                 {/* Basic Info */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
+                    <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
                       Weapon
                     </h3>
-                    <p className="text-lg text-gray-900 dark:text-white">{character.weapon}</p>
+                    <p className="text-lg text-gray-900">{character.weapon}</p>
                   </div>
                   {character.element && (
                     <div>
-                      <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
+                      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
                         Element
                       </h3>
-                      <p className="text-lg text-gray-900 dark:text-white">{character.element}</p>
+                      <p className="text-lg text-gray-900">{character.element}</p>
                     </div>
                   )}
                 </div>
@@ -251,8 +251,8 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
                 {/* Overview */}
                 {character.overview && (
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Overview</h3>
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
+                    <p className="text-gray-700 leading-relaxed">
                       {t(character.overview)}
                     </p>
                   </div>
@@ -264,16 +264,16 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
 
         {/* Navigation Tabs */}
         <div className="mb-8">
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700">
-            <div className="flex flex-wrap border-b border-gray-200 dark:border-gray-700">
+          <div className="bg-white rounded-xl shadow-md border border-gray-200">
+            <div className="flex flex-wrap border-b border-gray-200">
               {sections.map((section) => (
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
                   className={`px-6 py-4 text-sm font-medium transition-colors ${
                     activeSection === section.id
-                      ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700'
+                      ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50/20'
+                      : 'text-gray-600 hover:text-gray-900:text-white hover:bg-gray-50:bg-gray-700'
                   }`}
                 >
                   {t(section.label)}
@@ -290,16 +290,16 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
 
               {/* Overview Section */}
               <section id="overview" className="scroll-mt-8">
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-200 dark:border-gray-700">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6 font-['Poppins',sans-serif]">
+                <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+                  <h2 className="text-xl font-bold text-gray-900 mb-6 font-['Poppins',sans-serif]">
                     {language === 'vi' ? 'Tổng quan' : 'Overview'}
                   </h2>
                   {character.overview ? (
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+                    <p className="text-gray-700 leading-relaxed text-lg">
                       {t(character.overview)}
                     </p>
                   ) : (
-                    <p className="text-gray-500 dark:text-gray-400">
+                    <p className="text-gray-500">
                       {language === 'vi' ? 'Mô tả nhân vật sẽ có sớm.' : 'Character description will be available soon.'}
                     </p>
                   )}
@@ -308,32 +308,32 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
 
               {/* Skills Section */}
               <section id="skills" className="scroll-mt-8">
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-200 dark:border-gray-700">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6 font-['Poppins',sans-serif]">
+                <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+                  <h2 className="text-xl font-bold text-gray-900 mb-6 font-['Poppins',sans-serif]">
                     {language === 'vi' ? 'Kỹ năng' : 'Skills'}
                   </h2>
                   
                   {character.skills && character.skills.length > 0 ? (
                     <div className="space-y-6">
                       {character.skills.map((skill, index) => (
-                        <div key={index} className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+                        <div key={index} className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                           <div className="flex items-center justify-between mb-3">
-                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                            <h3 className="text-lg font-semibold text-gray-900">
                               {t(skill.name)}
                             </h3>
                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                               skill.type === 'active' 
-                                ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300'
-                                : 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300'
+                                ? 'bg-blue-100 text-blue-700'
+                                : 'bg-green-100 text-green-700'
                             }`}>
                               {skill.type}
                             </span>
                           </div>
-                          <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                          <p className="text-gray-700 mb-4 leading-relaxed">
                             {t(skill.description)}
                           </p>
                           {(skill.cooldown || skill.cost) && (
-                            <div className="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
+                            <div className="flex gap-6 text-sm text-gray-600">
                               {skill.cooldown && (
                                 <div className="flex items-center">
                                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -357,7 +357,7 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
                     </div>
                   ) : (
                     <div className="text-center py-12">
-                      <p className="text-gray-500 dark:text-gray-400">
+                      <p className="text-gray-500">
                         {language === 'vi' ? 'Thông tin kỹ năng sẽ có sớm.' : 'Skills information will be available soon.'}
                       </p>
                     </div>
@@ -367,20 +367,20 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
 
               {/* Build Section */}
               <section id="build" className="scroll-mt-8">
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-200 dark:border-gray-700">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6 font-['Poppins',sans-serif]">
+                <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+                  <h2 className="text-xl font-bold text-gray-900 mb-6 font-['Poppins',sans-serif]">
                     {language === 'vi' ? 'Hướng dẫn Build' : 'Build Guide'}
                   </h2>
                   
                   {character.build ? (
                     <div className="grid md:grid-cols-3 gap-4">
-                      <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-700">
-                        <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-3">
+                      <div className="bg-blue-50/20 p-4 rounded-lg border border-blue-200">
+                        <h3 className="text-lg font-semibold text-blue-800 mb-3">
                           {language === 'vi' ? 'Vũ Khí Đề Xuất' : 'Recommended Weapons'}
                         </h3>
                         <ul className="space-y-3">
                           {character.build.weapons.map((weapon, index) => (
-                            <li key={index} className="flex items-center text-blue-700 dark:text-blue-300">
+                            <li key={index} className="flex items-center text-blue-700">
                               <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0"></span>
                               {weapon}
                             </li>
@@ -388,13 +388,13 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
                         </ul>
                       </div>
                       
-                      <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg border border-purple-200 dark:border-purple-700">
-                        <h3 className="text-lg font-semibold text-purple-800 dark:text-purple-300 mb-3">
+                      <div className="bg-purple-50/20 p-4 rounded-lg border border-purple-200">
+                        <h3 className="text-lg font-semibold text-purple-800 mb-3">
                           {language === 'vi' ? 'Hiện Vật Đề Xuất' : 'Recommended Artifacts'}
                         </h3>
                         <ul className="space-y-3">
                           {character.build.artifacts.map((artifact, index) => (
-                            <li key={index} className="flex items-center text-purple-700 dark:text-purple-300">
+                            <li key={index} className="flex items-center text-purple-700">
                               <span className="w-2 h-2 bg-purple-500 rounded-full mr-3 flex-shrink-0"></span>
                               {artifact}
                             </li>
@@ -402,13 +402,13 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
                         </ul>
                       </div>
                       
-                      <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg border border-orange-200 dark:border-orange-700">
-                        <h3 className="text-lg font-semibold text-orange-800 dark:text-orange-300 mb-3">
+                      <div className="bg-orange-50/20 p-4 rounded-lg border border-orange-200">
+                        <h3 className="text-lg font-semibold text-orange-800 mb-3">
                           {language === 'vi' ? 'Ưu Tiên Chỉ Số' : 'Stat Priority'}
                         </h3>
                         <ul className="space-y-3">
                           {character.build.statPriority.map((stat, index) => (
-                            <li key={index} className="flex items-center text-orange-700 dark:text-orange-300">
+                            <li key={index} className="flex items-center text-orange-700">
                               <span className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 flex-shrink-0">
                                 {index + 1}
                               </span>
@@ -420,7 +420,7 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
                     </div>
                   ) : (
                     <div className="text-center py-12">
-                      <p className="text-gray-500 dark:text-gray-400">
+                      <p className="text-gray-500">
                         {language === 'vi' ? 'Gợi ý build sẽ có sớm.' : 'Build recommendations will be available soon.'}
                       </p>
                     </div>
@@ -430,38 +430,38 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
 
               {/* Recommended Weapons Section */}
               <section id="weapons" className="scroll-mt-8">
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-200 dark:border-gray-700">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6 font-['Poppins',sans-serif]">
+                <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+                  <h2 className="text-xl font-bold text-gray-900 mb-6 font-['Poppins',sans-serif]">
                     {language === 'vi' ? 'Vũ Khí Đề Xuất' : 'Recommended Weapons'}
                   </h2>
                   
                   {character.recommendedWeapons && character.recommendedWeapons.length > 0 ? (
                     <div className="grid gap-4">
                       {character.recommendedWeapons.map((weapon, index) => (
-                        <div key={index} className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+                        <div key={index} className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                           <div className="flex items-center justify-between mb-3">
-                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                            <h3 className="text-lg font-semibold text-gray-900">
                               {weapon.name}
                             </h3>
                             <div className="flex items-center space-x-2">
                               <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                                 weapon.priority === 'High' 
-                                  ? 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
+                                  ? 'bg-red-100 text-red-700'
                                   : weapon.priority === 'Medium'
-                                  ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300'
-                                  : 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300'
+                                  ? 'bg-yellow-100 text-yellow-700'
+                                  : 'bg-blue-100 text-blue-700'
                               }`}>
                                 {weapon.priority === 'High' ? '⭐ Best' : weapon.priority === 'Medium' ? '👍 Good' : '👍 Decent'}
                               </span>
                               <Link
                                 href={`/weapon/${weapon.slug}`}
-                                className="text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 text-sm transition-colors"
+                                className="text-blue-600 hover:text-blue-500:text-blue-300 text-sm transition-colors"
                               >
                                 {language === 'vi' ? 'Xem Vũ Khí →' : 'View Weapon →'}
                               </Link>
                             </div>
                           </div>
-                          <p className="text-gray-600 dark:text-gray-400 text-sm">
+                          <p className="text-gray-600 text-sm">
                             {language === 'vi' 
                               ? `Độ ưu tiên: ${weapon.priority === 'High' ? 'Cao' : weapon.priority === 'Medium' ? 'Trung bình' : 'Thấp'}`
                               : `Priority: ${weapon.priority}`
@@ -472,7 +472,7 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
                     </div>
                   ) : (
                     <div className="text-center py-12">
-                      <p className="text-gray-500 dark:text-gray-400">
+                      <p className="text-gray-500">
                         {language === 'vi' ? 'Chưa có vũ khí đề xuất nào.' : 'No recommended weapons yet.'}
                       </p>
                     </div>
@@ -482,27 +482,27 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
 
               {/* Team Synergy Section */}
               <section id="synergy" className="scroll-mt-8">
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-200 dark:border-gray-700">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6 font-['Poppins',sans-serif]">
+                <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+                  <h2 className="text-xl font-bold text-gray-900 mb-6 font-['Poppins',sans-serif]">
                     {language === 'vi' ? 'Hiệu Ứng Đội' : 'Team Synergy'}
                   </h2>
                   
                   {character.synergy && character.synergy.length > 0 ? (
                     <div className="grid gap-4">
                       {character.synergy.map((synergy, index) => (
-                        <div key={index} className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+                        <div key={index} className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                           <div className="flex items-center justify-between mb-3">
-                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                            <h3 className="text-lg font-semibold text-gray-900">
                               {synergy.partner}
                             </h3>
                             <Link
                               href={`/characters/${synergy.partner.toLowerCase()}`}
-                              className="text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 text-sm transition-colors"
+                              className="text-blue-600 hover:text-blue-500:text-blue-300 text-sm transition-colors"
                             >
                               {language === 'vi' ? 'Xem Nhân Vật →' : 'View Character →'}
                             </Link>
                           </div>
-                          <p className="text-gray-700 dark:text-gray-300">
+                          <p className="text-gray-700">
                             {t(synergy.reason)}
                           </p>
                         </div>
@@ -510,7 +510,7 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
                     </div>
                   ) : (
                     <div className="text-center py-12">
-                      <p className="text-gray-500 dark:text-gray-400">
+                      <p className="text-gray-500">
                         {language === 'vi' ? 'Thông tin hiệu ứng đội sẽ có sớm.' : 'Team synergy information will be available soon.'}
                       </p>
                     </div>
@@ -520,14 +520,14 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
 
               {/* Pros & Cons Section */}
               <section id="pros-cons" className="scroll-mt-8">
-                <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-200 dark:border-gray-700">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6 font-['Poppins',sans-serif]">
+                <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+                  <h2 className="text-xl font-bold text-gray-900 mb-6 font-['Poppins',sans-serif]">
                     {language === 'vi' ? 'Ưu & Nhược Điểm' : 'Pros & Cons'}
                   </h2>
                   
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border border-green-200 dark:border-green-700">
-                      <h3 className="text-lg font-semibold text-green-800 dark:text-green-300 mb-3 flex items-center">
+                    <div className="bg-green-50/20 p-4 rounded-lg border border-green-200">
+                      <h3 className="text-lg font-semibold text-green-800 mb-3 flex items-center">
                         <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
@@ -536,21 +536,21 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
                       {character.pros && character.pros.length > 0 ? (
                         <ul className="space-y-3">
                           {character.pros.map((pro, index) => (
-                            <li key={index} className="flex items-start text-green-700 dark:text-green-300">
+                            <li key={index} className="flex items-start text-green-700">
                               <span className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></span>
                               {t(pro)}
                             </li>
                           ))}
                         </ul>
                       ) : (
-                        <p className="text-green-600 dark:text-green-400">
+                        <p className="text-green-600">
                           {language === 'vi' ? 'Chưa có điểm mạnh nào được liệt kê.' : 'No strengths listed yet.'}
                         </p>
                       )}
                     </div>
                     
-                    <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg border border-red-200 dark:border-red-700">
-                      <h3 className="text-lg font-semibold text-red-800 dark:text-red-300 mb-3 flex items-center">
+                    <div className="bg-red-50/20 p-4 rounded-lg border border-red-200">
+                      <h3 className="text-lg font-semibold text-red-800 mb-3 flex items-center">
                         <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                         </svg>
@@ -559,14 +559,14 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
                       {character.cons && character.cons.length > 0 ? (
                         <ul className="space-y-3">
                           {character.cons.map((con, index) => (
-                            <li key={index} className="flex items-start text-red-700 dark:text-red-300">
+                            <li key={index} className="flex items-start text-red-700">
                               <span className="w-2 h-2 bg-red-500 rounded-full mr-3 mt-2 flex-shrink-0"></span>
                               {t(con)}
                             </li>
                           ))}
                         </ul>
                       ) : (
-                        <p className="text-red-600 dark:text-red-400">
+                        <p className="text-red-600">
                           {language === 'vi' ? 'Chưa có điểm yếu nào được liệt kê.' : 'No weaknesses listed yet.'}
                         </p>
                       )}
@@ -586,10 +586,10 @@ function CharacterDetailContent({ character }: CharacterDetailClientProps) {
 export default function CharacterDetailClient({ character }: CharacterDetailClientProps) {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600 dark:text-gray-400">Loading character details...</p>
+          <p className="text-gray-600">Loading character details...</p>
         </div>
       </div>
     }>

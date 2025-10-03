@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import TierList from '@/components/TierList';
 import StructuredData from '@/components/StructuredData';
+import { getCharacters } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Duet Night Abyss Character Tier List',
@@ -31,11 +32,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function TierListPage() {
+export default async function TierListPage() {
+  const characters = await getCharacters();
+  
   return (
     <>
       <StructuredData type="tierlist" />
-      <TierList />
+      <TierList characters={characters} />
     </>
   );
 }

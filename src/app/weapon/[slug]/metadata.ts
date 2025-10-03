@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { weapons } from '@/data/weapons';
+import { getWeaponBySlug } from '@/lib/data';
 
 interface GenerateMetadataProps {
   params: Promise<{
@@ -9,7 +9,7 @@ interface GenerateMetadataProps {
 
 export async function generateMetadata({ params }: GenerateMetadataProps): Promise<Metadata> {
   const { slug } = await params;
-  const weapon = weapons.find((w) => w.id === slug);
+  const weapon = await getWeaponBySlug(slug);
 
   if (!weapon) {
     return {
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
       type: 'website',
       images: [
         {
-          url: weapon.image,
+          url: weapon.image || 'https://duetnightabyss.gachabuild.com/duetnightabyss.png',
           width: 400,
           height: 400,
           alt: weapon.name.en,
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
       card: 'summary_large_image',
       title,
       description,
-      images: [weapon.image],
+      images: [weapon.image || 'https://duetnightabyss.gachabuild.com/duetnightabyss.png'],
     },
   };
 }

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { characters } from '@/data/characters';
+import { getCharacters } from '@/lib/data';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Image from 'next/image';
 
@@ -45,30 +45,41 @@ export default function SearchWithSuggestions({
       return;
     }
 
-    const filteredCharacters = characters
-      .filter(char => {
-        const searchTerm = query.toLowerCase();
-        return (
-          char.name.en.toLowerCase().includes(searchTerm) ||
-          char.name.vi.toLowerCase().includes(searchTerm) ||
-          char.role.toLowerCase().includes(searchTerm) ||
-          char.element?.toLowerCase().includes(searchTerm) ||
-          char.weapon.toLowerCase().includes(searchTerm)
-        );
-      })
-      .slice(0, 8) // Limit to 8 suggestions
-      .map(char => ({
-        id: char.id,
-        name: t(char.name),
-        role: char.role,
-        element: char.element,
-        rarity: char.rarity,
-        image: char.image
-      }));
+    const filterCharacters = async () => {
+      try {
+        const characters = await getCharacters();
+        const filteredCharacters = characters
+          .filter(char => {
+            const searchTerm = query.toLowerCase();
+            return (
+              char.name.en.toLowerCase().includes(searchTerm) ||
+              char.name.vi.toLowerCase().includes(searchTerm) ||
+              char.role.toLowerCase().includes(searchTerm) ||
+              char.element?.toLowerCase().includes(searchTerm) ||
+              char.weapon.toLowerCase().includes(searchTerm)
+            );
+          })
+          .slice(0, 8) // Limit to 8 suggestions
+          .map(char => ({
+            id: char.slug.current,
+            name: t(char.name),
+            role: char.role,
+            element: char.element,
+            rarity: char.rarity,
+            image: char.image || '/characters/placeholder.svg'
+          }));
 
-    setSuggestions(filteredCharacters);
-    setShowSuggestions(filteredCharacters.length > 0);
-    setSelectedIndex(-1);
+        setSuggestions(filteredCharacters);
+        setShowSuggestions(filteredCharacters.length > 0);
+        setSelectedIndex(-1);
+      } catch (error) {
+        console.error('Failed to fetch characters for search:', error);
+        setSuggestions([]);
+        setShowSuggestions(false);
+      }
+    };
+
+    filterCharacters();
   }, [query, t]);
 
   // Handle input change
@@ -150,7 +161,7 @@ export default function SearchWithSuggestions({
     
     return parts.map((part, index) => 
       regex.test(part) ? (
-        <mark key={index} className="bg-yellow-200 dark:bg-yellow-800 px-1 rounded">
+        <mark key={index} className="bg-yellow-200 px-1 rounded">
           {part}
         </mark>
       ) : part
@@ -161,13 +172,13 @@ export default function SearchWithSuggestions({
   const getRoleBadgeColor = (role: string) => {
     switch (role.toLowerCase()) {
       case 'vanguard':
-        return 'bg-red-100 text-red-700 border-red-200 dark:bg-red-900 dark:text-red-300 dark:border-red-700';
+        return 'bg-red-100 text-red-700 border-red-200';
       case 'support':
-        return 'bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900 dark:text-blue-300 dark:border-blue-700';
+        return 'bg-blue-100 text-blue-700 border-blue-200';
       case 'annihilator':
-        return 'bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900 dark:text-purple-300 dark:border-purple-700';
+        return 'bg-purple-100 text-purple-700 border-purple-200';
       default:
-        return 'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600';
+        return 'bg-gray-100 text-gray-700 border-gray-200';
     }
   };
 
@@ -184,7 +195,7 @@ export default function SearchWithSuggestions({
           ref={inputRef}
           type="text"
           placeholder={placeholder}
-          className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           value={query}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
@@ -198,19 +209,19 @@ export default function SearchWithSuggestions({
       {showSuggestions && suggestions.length > 0 && (
         <div
           ref={suggestionsRef}
-          className="absolute z-50 w-full mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-80 overflow-y-auto"
+          className="absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-80 overflow-y-auto"
         >
           {suggestions.map((character, index) => (
             <div
               key={character.id}
               onClick={() => handleSuggestionClick(character)}
-              className={`px-4 py-3 cursor-pointer border-b border-gray-100 dark:border-gray-700 last:border-b-0 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${
-                selectedIndex === index ? 'bg-blue-50 dark:bg-blue-900/20' : ''
+              className={`px-4 py-3 cursor-pointer border-b border-gray-100 last:border-b-0 hover:bg-gray-50:bg-gray-700 transition-colors ${
+                selectedIndex === index ? 'bg-blue-50/20' : ''
               }`}
             >
               <div className="flex items-center space-x-3">
                 {/* Character Image */}
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-600">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden bg-gray-100">
                   <Image
                     src={character.image}
                     alt={character.name}
@@ -227,11 +238,11 @@ export default function SearchWithSuggestions({
                 {/* Character Info */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center space-x-2 mb-1">
-                    <h4 className="text-sm font-medium text-gray-900 dark:text-white truncate">
+                    <h4 className="text-sm font-medium text-gray-900 truncate">
                       {highlightText(character.name, query)}
                     </h4>
                     {character.rarity && (
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                      <span className="text-xs text-gray-500">
                         {character.rarity}
                       </span>
                     )}
@@ -242,7 +253,7 @@ export default function SearchWithSuggestions({
                       {character.role}
                     </span>
                     {character.element && (
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                      <span className="text-xs text-gray-500">
                         {character.element}
                       </span>
                     )}

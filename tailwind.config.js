@@ -1,10 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class', // Enable class-based dark mode
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './sanity/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  safelist: [
+    // Add commonly used classes to safelist to avoid purging issues
+    'bg-background',
+    'text-foreground',
+    'bg-card',
+    'border-border',
+    'text-accent',
   ],
   theme: {
     extend: {

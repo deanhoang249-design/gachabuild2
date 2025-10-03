@@ -26,7 +26,7 @@ export default function FilterGroup({
 }: FilterGroupProps) {
   return (
     <div className={className}>
-      <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+      <h3 className="text-sm font-semibold text-gray-700 mb-3">
         {title}
       </h3>
       <div className="flex flex-wrap gap-2">

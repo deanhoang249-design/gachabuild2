@@ -1,4 +1,5 @@
-import { characters } from './characters';
+import { getCharacters } from '@/lib/data';
+import { Character } from '@/lib/data';
 
 export const tierlist = {
   EX: ["berenica", "hilda", "truffle-and-filbert"],
@@ -7,10 +8,16 @@ export const tierlist = {
 };
 
 // Helper function to get characters by tier
-export function getCharactersByTier(tier: keyof typeof tierlist) {
-  return tierlist[tier]
-    .map(id => characters.find(char => char.id === id))
-    .filter((char): char is NonNullable<typeof char> => char !== undefined);
+export async function getCharactersByTier(tier: keyof typeof tierlist): Promise<Character[]> {
+  try {
+    const characters = await getCharacters();
+    return tierlist[tier]
+      .map(id => characters.find(char => char.slug.current === id))
+      .filter((char): char is NonNullable<typeof char> => char !== undefined);
+  } catch (error) {
+    console.error('Failed to fetch characters for tier list:', error);
+    return [];
+  }
 }
 
 // Helper function to get all tiers

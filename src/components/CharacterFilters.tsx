@@ -42,7 +42,7 @@ export default function CharacterFilters({
   const hasActiveFilters = currentSelectedRole || selectedElement || currentSelectedWeapon || searchQuery;
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 border border-gray-200 dark:border-gray-700">
+    <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
       <div className="space-y-6">
         {/* Search Bar with Suggestions */}
         {onSearch && (
@@ -88,7 +88,7 @@ export default function CharacterFilters({
 
         {/* Clear Filters */}
         {hasActiveFilters && (
-          <div className="pt-4 border-t border-gray-200 dark:border-gray-600">
+          <div className="pt-4 border-t border-gray-200">
             <button
               onClick={() => {
                 currentRoleFilter?.('');
@@ -96,7 +96,7 @@ export default function CharacterFilters({
                 onWeaponFilter?.('');
                 onSearch?.('');
               }}
-              className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              className="text-sm text-gray-500 hover:text-gray-700:text-gray-300 transition-colors"
             >
               Clear all filters
             </button>

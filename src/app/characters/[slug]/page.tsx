@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { characters } from '@/data/characters';
+import { getCharacterBySlug, getCharacterSlugs } from '@/lib/data';
 import { generateMetadata } from './metadata';
 import CharacterDetailClient from '@/components/CharacterDetailClient';
 
@@ -8,8 +8,9 @@ export { generateMetadata };
 
 // Generate static params for all characters
 export async function generateStaticParams() {
-  return characters.map((character) => ({
-    slug: character.id,
+  const slugs = await getCharacterSlugs();
+  return slugs.map((slug) => ({
+    slug,
   }));
 }
 
@@ -21,7 +22,7 @@ interface CharacterDetailPageProps {
 
 export default async function CharacterDetailPage({ params }: CharacterDetailPageProps) {
   const { slug } = await params;
-  const character = characters.find((char) => char.id === slug);
+  const character = await getCharacterBySlug(slug);
 
   if (!character) {
     notFound();

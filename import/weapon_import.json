@@ -1,0 +1,44 @@
+[
+  {
+    "name": { "en": "Judgement Edge", "vi": "Lưỡi Kiếm Phán Xét" },
+    "slug": "judgement-edge",
+    "type": "Sword",
+    "rarity": "SSR",
+    "description": {
+      "en": "A legendary sword forged from the essence of divine justice. Its blade gleams with an otherworldly light that pierces through darkness.",
+      "vi": "Một thanh kiếm huyền thoại được rèn từ tinh chất của công lý thần thánh. Lưỡi kiếm tỏa sáng với ánh sáng siêu nhiên xuyên thủng bóng tối."
+    },
+    "passive": {
+      "en": "Increases critical hit damage by 25% and has a 15% chance to deal true damage that ignores defense.",
+      "vi": "Tăng sát thương chí mạng 25% và có 15% cơ hội gây sát thương thật bỏ qua phòng thủ."
+    },
+    "stats": {
+      "attack": 1200,
+      "critRate": 15,
+      "critDamage": 50
+    },
+    "image": "/weapons/judgement-edge.png",
+    "recommendedCharacters": ["berenica", "hilda", "outsider"]
+  },
+  {
+    "name": { "en": "Windcaller Bow", "vi": "Cung Gọi Gió" },
+    "slug": "windcaller-bow",
+    "type": "Bow",
+    "rarity": "SSR",
+    "description": {
+      "en": "An ancient bow that commands the very winds themselves. Arrows fired from this bow never miss their mark.",
+      "vi": "Một cây cung cổ xưa điều khiển chính những cơn gió. Những mũi tên bắn từ cây cung này không bao giờ trượt mục tiêu."
+    },
+    "passive": {
+      "en": "Increases movement speed by 20% and grants immunity to crowd control effects. Arrows have a 25% chance to create wind vortexes.",
+      "vi": "Tăng tốc độ di chuyển 20% và miễn nhiễm hiệu ứng kiểm soát đám đông. Mũi tên có 25% cơ hội tạo ra xoáy gió."
+    },
+    "stats": {
+      "attack": 1100,
+      "critRate": 18,
+      "critDamage": 45
+    },
+    "image": "/weapons/windcaller-bow.png",
+    "recommendedCharacters": ["fina", "iris", "yuna"]
+  }
+]

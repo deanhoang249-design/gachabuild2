@@ -2,14 +2,14 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="max-w-md mx-auto text-center">
         <div className="mb-8">
-          <h1 className="text-6xl font-bold text-gray-900 dark:text-white mb-4">404</h1>
-          <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
+          <h1 className="text-6xl font-bold text-gray-900 mb-4">404</h1>
+          <h2 className="text-2xl font-semibold text-gray-700 mb-4">
             Character Not Found
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-8">
+          <p className="text-gray-600 mb-8">
             The character you&apos;re looking for doesn&apos;t exist or has been removed.
           </p>
         </div>
@@ -28,7 +28,7 @@ export default function NotFound() {
           <div>
             <Link
               href="/"
-              className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+              className="text-blue-600 hover:text-blue-800:text-blue-300 transition-colors"
             >
               Go to Homepage
             </Link>

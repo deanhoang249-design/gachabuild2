@@ -1,6 +1,6 @@
 'use client';
 
-import { Character } from '@/data/characters';
+import { Character } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -39,11 +39,11 @@ export default function CharacterCard({ character }: CharacterCardProps) {
   
   return (
     <article className="character-card group">
-      <Link href={`/characters/${character.id}?from=characters`} className="block w-full h-full">
+      <Link href={`/characters/${character.slug.current}?from=characters`} className="block w-full h-full">
         {/* Character Image */}
         <div className="relative h-48 bg-gray-50 flex items-center justify-center p-4 overflow-hidden">
           <Image
-            src={character.image}
+            src={character.image || '/characters/placeholder.svg'}
             alt={`${t(character.name)} character portrait`}
             width={200}
             height={200}

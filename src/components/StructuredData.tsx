@@ -1,4 +1,8 @@
-import { characters } from '@/data/characters';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { getCharacters } from '@/lib/data';
+import { Character } from '@/lib/data';
 
 interface StructuredDataProps {
   type: 'website' | 'game' | 'character' | 'tierlist';
@@ -6,6 +10,29 @@ interface StructuredDataProps {
 }
 
 export default function StructuredData({ type, data }: StructuredDataProps) {
+  const [characters, setCharacters] = useState<Character[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchCharacters = async () => {
+      try {
+        const chars = await getCharacters();
+        setCharacters(chars);
+      } catch (error) {
+        console.error('Failed to fetch characters for structured data:', error);
+        setCharacters([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (type === 'game' || type === 'character') {
+      fetchCharacters();
+    } else {
+      setLoading(false);
+    }
+  }, [type]);
+
   const getWebsiteStructuredData = () => ({
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -110,6 +137,11 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
         return data || {};
     }
   };
+
+  // Don't render if still loading characters for game/character types
+  if (loading && (type === 'game' || type === 'character')) {
+    return null;
+  }
 
   return (
     <script

@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
-import { characters } from '@/data/characters';
+import { getCharacterBySlug } from '@/lib/data';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const character = characters.find((char) => char.id === slug);
+  const character = await getCharacterBySlug(slug);
 
   if (!character) {
     return {
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       siteName: 'Duet Night Abyss Guide Hub',
       images: [
         {
-          url: character.splash || character.image,
+          url: character.splash || character.image || 'https://duetnightabyss.gachabuild.com/duetnightabyss.png',
           width: 1200,
           height: 630,
           alt: `${characterName} - Duet Night Abyss Character`,
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: 'summary_large_image',
       title,
       description,
-      images: [character.splash || character.image],
+      images: [character.splash || character.image || 'https://duetnightabyss.gachabuild.com/duetnightabyss.png'],
       creator: '@DuetNightAbyss',
       site: '@DuetNightAbyss',
     },

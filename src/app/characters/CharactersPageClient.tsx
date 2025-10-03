@@ -1,11 +1,15 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { characters } from '@/data/characters';
+import { Character } from '@/lib/data';
 import CharacterCard from '@/components/CharacterCard';
 import CharacterFilters from '@/components/CharacterFilters';
 
-export default function CharactersPageClient() {
+interface CharactersPageClientProps {
+  characters: Character[];
+}
+
+export default function CharactersPageClient({ characters }: CharactersPageClientProps) {
   const [selectedRole, setSelectedRole] = useState('');
   const [selectedWeapon, setSelectedWeapon] = useState('');
   const [selectedElement, setSelectedElement] = useState('');
@@ -25,7 +29,7 @@ export default function CharactersPageClient() {
       
       return roleMatch && weaponMatch && elementMatch && searchMatch;
     });
-  }, [selectedRole, selectedWeapon, selectedElement, searchQuery]);
+  }, [selectedRole, selectedWeapon, selectedElement, searchQuery, characters]);
 
   return (
     <main className="py-8">
@@ -64,7 +68,7 @@ export default function CharactersPageClient() {
         {filteredCharacters.length > 0 ? (
           <div className="character-grid" role="list" aria-label="Character database">
             {filteredCharacters.map((character) => (
-              <CharacterCard key={character.id} character={character} />
+              <CharacterCard key={character._id} character={character} />
             ))}
           </div>
         ) : (

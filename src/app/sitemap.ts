@@ -1,7 +1,9 @@
 import { MetadataRoute } from 'next'
-import { characters } from '@/data/characters'
+import { getCharacters, getWeapons } from '@/lib/data'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = 'force-static'
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://duetnightabyss.gachabuild.com'
   
   // Static pages
@@ -45,27 +47,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   // Character pages
+  const characters = await getCharacters()
   const characterPages = characters.map((character) => ({
-    url: `${baseUrl}/characters/${character.id}`,
+    url: `${baseUrl}/characters/${character.slug.current}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
 
-  // Weapon pages (if you have weapon data)
-  const weaponPages = [
-    'abyssal-rifle',
-    'culinary-staff',
-    'golden-river',
-    'ice-staff',
-    'judgement-edge',
-    'lightning-spear',
-    'maids-blade',
-    'phoenix-rifle',
-    'tricksters-blade',
-    'windcaller-bow',
-  ].map((weapon) => ({
-    url: `${baseUrl}/weapon/${weapon}`,
+  // Weapon pages
+  const weapons = await getWeapons()
+  const weaponPages = weapons.map((weapon) => ({
+    url: `${baseUrl}/weapon/${weapon.slug.current}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,

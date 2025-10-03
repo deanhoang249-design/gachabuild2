@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import CharactersPageClient from './CharactersPageClient';
 import StructuredData from '@/components/StructuredData';
+import { getCharacters } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Duet Night Abyss Character Database',
@@ -31,11 +32,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CharactersPage() {
+export default async function CharactersPage() {
+  const characters = await getCharacters();
+  
   return (
     <>
       <StructuredData type="character" />
-      <CharactersPageClient />
+      <CharactersPageClient characters={characters} />
     </>
   );
 }
