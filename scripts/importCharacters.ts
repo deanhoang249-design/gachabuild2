@@ -99,8 +99,9 @@ async function importCharacters() {
           rarity: character.rarity,
           element: character.element,
           overview: character.overview,
-          ...(character.image && { image: character.image }),
-          ...(character.splash && { splash: character.splash }),
+          // Note: Image fields are commented out as they need to be uploaded as assets in Sanity
+          // ...(character.image && { image: character.image }),
+          // ...(character.splash && { splash: character.splash }),
           ...(character.skills && { skills: character.skills }),
           ...(character.build && { build: character.build }),
           ...(character.synergy && { synergy: character.synergy }),

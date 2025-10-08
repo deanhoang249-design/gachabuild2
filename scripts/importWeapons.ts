@@ -78,7 +78,8 @@ async function importWeapons() {
           description: weapon.description,
           ...(weapon.passive && { passive: weapon.passive }),
           ...(weapon.stats && { stats: weapon.stats }),
-          ...(weapon.image && { image: weapon.image }),
+          // Note: Image field is commented out as it needs to be uploaded as an asset in Sanity
+          // ...(weapon.image && { image: weapon.image }),
           ...(weapon.recommendedCharacters && { recommendedCharacters: weapon.recommendedCharacters }),
         };
 
