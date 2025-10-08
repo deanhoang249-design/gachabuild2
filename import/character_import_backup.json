@@ -1,0 +1,74 @@
+[
+  {
+    "name": { "en": "Berenica", "vi": "Berenica" },
+    "slug": "berenica",
+    "role": "Vanguard",
+    "weapon": "Sword",
+    "rarity": "5★",
+    "element": "Fire",
+    "overview": {
+      "en": "A fierce warrior from the Republic of Luca, Berenica wields fire-based abilities with exceptional combat prowess.",
+      "vi": "Một chiến binh dữ dội từ Cộng hòa Luca, Berenica sử dụng khả năng lửa với tài năng chiến đấu đặc biệt."
+    },
+    "image": "/characters/webp/berenica.webp",
+    "splash": "/characters/berenica.svg",
+    "skills": [
+      {
+        "name": { "en": "Fire Strike", "vi": "Đòn Lửa" },
+        "description": { "en": "Deals fire damage to enemies", "vi": "Gây sát thương lửa cho kẻ thù" },
+        "type": "active",
+        "cooldown": "3 turns",
+        "cost": "2 MP"
+      }
+    ],
+    "build": {
+      "weapons": ["Firebrand Sword", "Maid's Blade"],
+      "artifacts": ["Fire Lord's Crown", "Tidiness Charm"],
+      "statPriority": ["Attack%", "Crit Rate", "Fire Damage", "Health%"]
+    },
+    "pros": [
+      { "en": "High single-target damage", "vi": "Sát thương mục tiêu đơn cao" },
+      { "en": "Strong passive buffs", "vi": "Buff thụ động mạnh" }
+    ],
+    "cons": [
+      { "en": "Requires high health maintenance", "vi": "Cần duy trì máu cao" },
+      { "en": "Weak against Water enemies", "vi": "Yếu trước kẻ thù hệ Nước" }
+    ]
+  },
+  {
+    "name": { "en": "Fina", "vi": "Fina" },
+    "slug": "fina",
+    "role": "Annihilator",
+    "weapon": "Bow",
+    "rarity": "5★",
+    "element": "Anemo",
+    "overview": {
+      "en": "Born into an unnatural family with a Charon father and mortal mother, Fina was raised with beliefs of equality between mortals and Charons.",
+      "vi": "Sinh ra trong một gia đình không bình thường với cha là Charon và mẹ là người phàm, Fina được nuôi dưỡng với niềm tin về sự bình đẳng giữa người phàm và Charon."
+    },
+    "image": "/characters/webp/fina.webp",
+    "splash": "/characters/fina.svg",
+    "skills": [
+      {
+        "name": { "en": "Golden River Flow", "vi": "Dòng Sông Vàng" },
+        "description": { "en": "Fires a wind-infused arrow that creates a golden trail", "vi": "Bắn một mũi tên được truyền sức mạnh gió tạo ra vệt vàng" },
+        "type": "active",
+        "cooldown": "3 turns",
+        "cost": "2 MP"
+      }
+    ],
+    "build": {
+      "weapons": ["Windcaller Bow", "Golden River"],
+      "artifacts": ["Wind Walker", "Golden Ember"],
+      "statPriority": ["Attack%", "Crit Rate", "Anemo Damage", "Energy Recharge"]
+    },
+    "pros": [
+      { "en": "High mobility and range", "vi": "Khả năng di chuyển và tầm xa cao" },
+      { "en": "Strong defensive capabilities", "vi": "Khả năng phòng thủ mạnh" }
+    ],
+    "cons": [
+      { "en": "Low base health", "vi": "Máu cơ bản thấp" },
+      { "en": "Requires positioning skill", "vi": "Cần kỹ năng định vị" }
+    ]
+  }
+]

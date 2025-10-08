@@ -33,7 +33,7 @@ export const games: Game[] = [
         id: 'tier-list',
         icon: '🏆',
         label: 'Tier List',
-        href: '/',
+        href: '/tier-list',
         category: 'main'
       },
       {

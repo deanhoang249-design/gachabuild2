@@ -1,9 +1,6 @@
 [
   {
-    "name": {
-      "en": "Judgement Edge",
-      "vi": "Lưỡi Kiếm Phán Xét"
-    },
+    "name": { "en": "Judgement Edge", "vi": "Lưỡi Kiếm Phán Xét" },
     "slug": "judgement-edge",
     "type": "Sword",
     "rarity": "SSR",
@@ -20,17 +17,11 @@
       "critRate": 15,
       "critDamage": 50
     },
-    "recommendedCharacters": [
-      "berenica",
-      "hilda",
-      "outsider"
-    ]
+    "image": "/weapons/judgement-edge.png",
+    "recommendedCharacters": ["berenica", "hilda", "outsider"]
   },
   {
-    "name": {
-      "en": "Windcaller Bow",
-      "vi": "Cung Gọi Gió"
-    },
+    "name": { "en": "Windcaller Bow", "vi": "Cung Gọi Gió" },
     "slug": "windcaller-bow",
     "type": "Bow",
     "rarity": "SSR",
@@ -47,10 +38,7 @@
       "critRate": 18,
       "critDamage": 45
     },
-    "recommendedCharacters": [
-      "fina",
-      "iris",
-      "yuna"
-    ]
+    "image": "/weapons/windcaller-bow.png",
+    "recommendedCharacters": ["fina", "iris", "yuna"]
   }
 ]
