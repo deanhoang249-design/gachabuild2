@@ -56,7 +56,7 @@ async function importCharacters() {
     console.log('🚀 Starting character import to Sanity...\n');
 
     // Read the JSON file
-    const jsonPath = path.join(process.cwd(), 'import', 'character_import_full.json');
+    const jsonPath = path.join(process.cwd(), 'import', 'character_import.json');
     
     if (!fs.existsSync(jsonPath)) {
       console.error('❌ Character import file not found:', jsonPath);

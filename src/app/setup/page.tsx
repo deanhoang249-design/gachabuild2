@@ -29,8 +29,8 @@ export default function SetupPage() {
               <ol className="list-decimal list-inside space-y-2 text-yellow-800">
                 <li>Get your Sanity API token from <a href="https://www.sanity.io/manage" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Sanity Manage</a></li>
                 <li>Select your project (ID: <code className="bg-gray-200 px-1 rounded">2eop0ymd</code>)</li>
-                <li>Go to "API" section and click "Add API token"</li>
-                <li>Name: "GachaBuild Import", Role: "Editor"</li>
+                <li>Go to &quot;API&quot; section and click &quot;Add API token&quot;</li>
+                <li>Name: &quot;GachaBuild Import&quot;, Role: &quot;Editor&quot;</li>
                 <li>Copy the token and run: <code className="bg-gray-200 px-1 rounded">echo &apos;SANITY_API_TOKEN=your_token_here&apos; &gt;&gt; .env.local</code></li>
                 <li>Run the import commands in your terminal</li>
               </ol>

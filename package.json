@@ -22,7 +22,8 @@
     "find:problematic-character": "ts-node scripts/findProblematicCharacter.ts",
     "check:all-datasets": "ts-node scripts/checkAllDatasets.ts",
     "delete:problematic-characters": "ts-node scripts/deleteProblematicCharacters.ts",
-    "delete:problematic-characters:execute": "ts-node scripts/deleteProblematicCharacters.ts --execute"
+    "delete:problematic-characters:execute": "ts-node scripts/deleteProblematicCharacters.ts --execute",
+    "clear:sanity": "ts-node scripts/clearAllSanityData.ts"
   },
   "engines": {
     "node": ">=18.0.0"

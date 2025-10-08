@@ -40,7 +40,7 @@ export default async function Home() {
     } else {
       redirect('/setup');
     }
-  } catch (error) {
+  } catch {
     // If there's an error fetching data, redirect to setup
     redirect('/setup');
   }

@@ -7,14 +7,41 @@
     "slug": "berenica",
     "role": "Vanguard",
     "weapon": "Sword",
-    "rarity": "5★",
-    "element": "Fire",
+    "rarity": "4★",
+    "element": "Unknown",
     "overview": {
-      "en": "A fierce warrior from the Republic of Luca, Berenica wields fire-based abilities with exceptional combat prowess.",
-      "vi": "Một chiến binh dữ dội từ Cộng hòa Luca, Berenica sử dụng khả năng lửa với tài năng chiến đấu đặc biệt."
+      "en": "Ước nguyện ư?... Tôi không nghĩ ra được gì cả. Nụ cười của ngài vào buổi sáng đã là sự lựa chọn tuyệt vời nhất rồi.",
+      "vi": "Ước nguyện ư?... Tôi không nghĩ ra được gì cả. Nụ cười của ngài vào buổi sáng đã là sự lựa chọn tuyệt vời nhất rồi."
     },
-    "image": "/characters/webp/berenica.webp",
-    "splash": "/characters/berenica.svg",
+    "image": "/characters/Berenica.png",
+    "splash": "/characters/Berenica.png",
+    "skills": [],
+    "build": {
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
+    },
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
+  },
+  {
+    "name": {
+      "en": "Daphne",
+      "vi": "Daphne"
+    },
+    "slug": "daphne",
+    "role": "Vanguard",
+    "weapon": "Sword",
+    "rarity": "4★",
+    "element": "Unknown",
+    "overview": {
+      "en": "Thật vui khi thấy bạn vẫn an toàn và khỏe mạnh. Hãy bảo trọng nhé. Nền hòa bình mà tất cả chúng ta đều mong mỏi chắc chắn sẽ sớm đến thôi.",
+      "vi": "Thật vui khi thấy bạn vẫn an toàn và khỏe mạnh. Hãy bảo trọng nhé. Nền hòa bình mà tất cả chúng ta đều mong mỏi chắc chắn sẽ sớm đến thôi."
+    },
+    "image": "/characters/Daphne.png",
+    "splash": "/characters/Daphne.png",
     "skills": [],
     "build": {
       "weapons": [],
@@ -32,277 +59,107 @@
       "vi": "Fina"
     },
     "slug": "fina",
-    "role": "Annihilator",
-    "weapon": "Bow",
-    "rarity": "5★",
-    "element": "Anemo",
+    "role": "Vanguard",
+    "weapon": "Sword",
+    "rarity": "4★",
+    "element": "Unknown",
     "overview": {
-      "en": "Born into an unnatural family with a Charon father and mortal mother, Fina was raised with beliefs of equality between mortals and Charons. After her father's execution for his forbidden Elysian faith, she found herself lost in the sewers of Islake until an outsider rescued her. Now she wields the power of wind with her bow, seeking to understand the magical golden river that flows through her dreams.",
-      "vi": "Sinh ra trong một gia đình không bình thường với cha là Charon và mẹ là người phàm, Fina được nuôi dưỡng với niềm tin về sự bình đẳng giữa người phàm và Charon. Sau khi cha cô bị hành quyết vì đức tin Elysian bị cấm, cô thấy mình lạc lõng trong cống rãnh của Islake cho đến khi một người ngoài cuộc cứu cô. Giờ đây cô sử dụng sức mạnh của gió với cung tên, tìm hiểu về dòng sông vàng ma thuật chảy qua giấc mơ của cô."
+      "en": "Một ngôi nhà nhỏ bé, nhỏ bé... Nó nằm và ẩn mình trong những ngọn cây và dòng sông vàng huyền diệu... Bạn có thấy không? Những viên than hồng đó... nứt ra, nứt ra...",
+      "vi": "Một ngôi nhà nhỏ bé, nhỏ bé... Nó nằm và ẩn mình trong những ngọn cây và dòng sông vàng huyền diệu... Bạn có thấy không? Những viên than hồng đó... nứt ra, nứt ra..."
     },
-    "image": "/characters/webp/fina.webp",
-    "splash": "/characters/fina.svg",
-    "skills": [
-      {
-        "name": {
-          "en": "Golden River Flow",
-          "vi": "Dòng Sông Vàng"
-        },
-        "description": {
-          "en": "Fires a wind-infused arrow that creates a golden trail, dealing Anemo damage and applying wind status.",
-          "vi": "Bắn một mũi tên được truyền sức mạnh gió tạo ra vệt vàng, gây sát thương Anemo và áp dụng trạng thái gió."
-        },
-        "type": "active",
-        "cooldown": "3 turns",
-        "cost": "2 MP"
-      },
-      {
-        "name": {
-          "en": "Treetop Sanctuary",
-          "vi": "Thánh Địa Ngọn Cây"
-        },
-        "description": {
-          "en": "Creates a protective wind barrier that reduces incoming damage by 30% and increases movement speed.",
-          "vi": "Tạo ra một rào chắn gió bảo vệ giảm 30% sát thương đến và tăng tốc độ di chuyển."
-        },
-        "type": "active",
-        "cooldown": "4 turns",
-        "cost": "3 MP"
-      },
-      {
-        "name": {
-          "en": "Magical Embers",
-          "vi": "Than Hồng Ma Thuật"
-        },
-        "description": {
-          "en": "Passive ability that increases critical hit rate by 15% when health is below 50%.",
-          "vi": "Khả năng thụ động tăng tỷ lệ chí mạng 15% khi máu dưới 50%."
-        },
-        "type": "passive"
-      }
-    ],
+    "image": "/characters/Fina.png",
+    "splash": "/characters/Fina.png",
+    "skills": [],
     "build": {
-      "weapons": [
-        "Windcaller Bow",
-        "Golden River",
-        "Anemo Master"
-      ],
-      "artifacts": [
-        "Wind Walker",
-        "Golden Ember",
-        "Treetop Guardian"
-      ],
-      "statPriority": [
-        "Attack%",
-        "Crit Rate",
-        "Anemo Damage",
-        "Energy Recharge"
-      ]
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
     },
-    "synergy": [
-      {
-        "partner": "Luna",
-        "reason": {
-          "en": "Healing support helps maintain Fina's passive ability",
-          "vi": "Hỗ trợ hồi máu giúp duy trì khả năng thụ động của Fina"
-        }
-      },
-      {
-        "partner": "Storm",
-        "reason": {
-          "en": "Anemo + Electro creates Swirl reactions",
-          "vi": "Anemo + Electro tạo ra phản ứng Xoáy"
-        }
-      }
-    ],
-    "pros": [
-      {
-        "en": "High mobility and range",
-        "vi": "Khả năng di chuyển và tầm xa cao"
-      },
-      {
-        "en": "Strong defensive capabilities",
-        "vi": "Khả năng phòng thủ mạnh"
-      },
-      {
-        "en": "Excellent Anemo synergy",
-        "vi": "Hiệu ứng Anemo tuyệt vời"
-      },
-      {
-        "en": "Unique passive mechanics",
-        "vi": "Cơ chế thụ động độc đáo"
-      }
-    ],
-    "cons": [
-      {
-        "en": "Low base health",
-        "vi": "Máu cơ bản thấp"
-      },
-      {
-        "en": "Requires positioning skill",
-        "vi": "Cần kỹ năng định vị"
-      },
-      {
-        "en": "Weak against Geo enemies",
-        "vi": "Yếu trước kẻ thù hệ Địa"
-      }
-    ],
-    "recommendedWeapons": [
-      {
-        "name": "Windcaller Bow",
-        "slug": "windcaller-bow",
-        "priority": "High"
-      },
-      {
-        "name": "Golden River",
-        "slug": "golden-river",
-        "priority": "High"
-      },
-      {
-        "name": "Abyssal Rifle",
-        "slug": "abyssal-rifle",
-        "priority": "Medium"
-      }
-    ]
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
   },
   {
     "name": {
-      "en": "Hilda",
-      "vi": "Hilda"
+      "en": "Fushu",
+      "vi": "Fushu"
     },
-    "slug": "hilda",
+    "slug": "fushu",
+    "role": "Support",
+    "weapon": "Sword",
+    "rarity": "4★",
+    "element": "Unknown",
+    "overview": {
+      "en": "Tôi là Fushu, một người chữa trị từ Huaxu. Nếu bạn bị thương hoặc không khỏe, xin đừng che giấu tôi. Mặc dù các kỹ năng của tôi có giới hạn, tôi sẽ làm mọi thứ trong khả năng của mình để bảo vệ sức khỏe của bạn.",
+      "vi": "Tôi là Fushu, một người chữa trị từ Huaxu. Nếu bạn bị thương hoặc không khỏe, xin đừng che giấu tôi. Mặc dù các kỹ năng của tôi có giới hạn, tôi sẽ làm mọi thứ trong khả năng của mình để bảo vệ sức khỏe của bạn."
+    },
+    "image": "/characters/Fushu.png",
+    "splash": "/characters/Fushu.png",
+    "skills": [],
+    "build": {
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
+    },
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
+  },
+  {
+    "name": {
+      "en": "Hellfire",
+      "vi": "Hellfire"
+    },
+    "slug": "hellfire",
     "role": "Vanguard",
     "weapon": "Sword",
-    "rarity": "5★",
-    "element": "Fire",
+    "rarity": "4★",
+    "element": "Unknown",
     "overview": {
-      "en": "A maid from the Hyperborean Empire with exceptional combat skills. Hilda believes in the virtue of tidiness even in the chaos of battle, letting bullets sing until silence reigns.",
-      "vi": "Một nữ hầu từ Đế chế Hyperborean với kỹ năng chiến đấu đặc biệt. Hilda tin vào đức tính ngăn nắp ngay cả trong sự hỗn loạn của trận chiến, để đạn ca hát cho đến khi im lặng ngự trị."
+      "en": "Mỗi phút nghỉ ngơi đều trì hoãn công lý một chút, và khi công lý bị trì hoãn, hỗn loạn và quy luật của rừng rậm sẽ chiếm lĩnh.",
+      "vi": "Mỗi phút nghỉ ngơi đều trì hoãn công lý một chút, và khi công lý bị trì hoãn, hỗn loạn và quy luật của rừng rậm sẽ chiếm lĩnh."
     },
-    "image": "/characters/webp/hilda.webp",
-    "splash": "/characters/hilda.svg",
-    "skills": [
-      {
-        "name": {
-          "en": "Bullet Symphony",
-          "vi": "Giao Hưởng Đạn"
-        },
-        "description": {
-          "en": "Fires a barrage of bullets dealing 150% Fire damage to all enemies in a line.",
-          "vi": "Bắn một loạt đạn gây 150% sát thương Lửa cho tất cả kẻ thù trong một đường thẳng."
-        },
-        "type": "active",
-        "cooldown": "3 turns",
-        "cost": "2 MP"
-      },
-      {
-        "name": {
-          "en": "Masked Whirl",
-          "vi": "Xoáy Mặt Nạ"
-        },
-        "description": {
-          "en": "Creates a spinning attack that deals 120% Fire damage and applies burn effect.",
-          "vi": "Tạo ra một đòn tấn công xoay gây 120% sát thương Lửa và áp dụng hiệu ứng bỏng."
-        },
-        "type": "active",
-        "cooldown": "4 turns",
-        "cost": "3 MP"
-      },
-      {
-        "name": {
-          "en": "Maid's Virtue",
-          "vi": "Đức Hạnh Nữ Hầu"
-        },
-        "description": {
-          "en": "Passive ability that increases attack power by 20% when health is above 80%.",
-          "vi": "Khả năng thụ động tăng sức tấn công 20% khi máu trên 80%."
-        },
-        "type": "passive"
-      }
-    ],
+    "image": "/characters/Hellfire.png",
+    "splash": "/characters/Hellfire.png",
+    "skills": [],
     "build": {
-      "weapons": [
-        "Maid's Blade",
-        "Firebrand Sword",
-        "Order's Edge"
-      ],
-      "artifacts": [
-        "Maid's Apron",
-        "Fire Lord's Crown",
-        "Tidiness Charm"
-      ],
-      "statPriority": [
-        "Attack%",
-        "Crit Rate",
-        "Fire Damage",
-        "Health%"
-      ]
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
     },
-    "synergy": [
-      {
-        "partner": "Nova",
-        "reason": {
-          "en": "Fire element synergy and combo attacks",
-          "vi": "Hiệu ứng Lửa và tấn công combo"
-        }
-      },
-      {
-        "partner": "Luna",
-        "reason": {
-          "en": "Healing support maintains Hilda's passive ability",
-          "vi": "Hỗ trợ hồi máu duy trì khả năng thụ động của Hilda"
-        }
-      }
-    ],
-    "pros": [
-      {
-        "en": "High single-target damage",
-        "vi": "Sát thương mục tiêu đơn cao"
-      },
-      {
-        "en": "Strong passive buffs",
-        "vi": "Buff thụ động mạnh"
-      },
-      {
-        "en": "Excellent Fire synergy",
-        "vi": "Hiệu ứng Lửa tuyệt vời"
-      },
-      {
-        "en": "Good survivability",
-        "vi": "Khả năng sống sót tốt"
-      }
-    ],
-    "cons": [
-      {
-        "en": "Requires high health maintenance",
-        "vi": "Cần duy trì máu cao"
-      },
-      {
-        "en": "Weak against Water enemies",
-        "vi": "Yếu trước kẻ thù hệ Nước"
-      },
-      {
-        "en": "Limited mobility",
-        "vi": "Khả năng di chuyển hạn chế"
-      }
-    ],
-    "recommendedWeapons": [
-      {
-        "name": "Maid's Blade",
-        "slug": "maids-blade",
-        "priority": "High"
-      },
-      {
-        "name": "Judgement Edge",
-        "slug": "judgement-edge",
-        "priority": "High"
-      },
-      {
-        "name": "Trickster's Blade",
-        "slug": "tricksters-blade",
-        "priority": "Medium"
-      }
-    ]
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
+  },
+  {
+    "name": {
+      "en": "Lady Nifle",
+      "vi": "Lady Nifle"
+    },
+    "slug": "lady-nifle",
+    "role": "Vanguard",
+    "weapon": "Sword",
+    "rarity": "4★",
+    "element": "Unknown",
+    "overview": {
+      "en": "Nếu bạn đi lang thang vào Rừng Ngọc Lục Bảo, bạn có phiền mang cho tôi một bó hoa asters trắng không? Bên dưới trái đất của nó là nơi bạn bè tôi yên nghỉ, những đứa con của tôi, và một phiên bản của tôi từ rất lâu rồi.",
+      "vi": "Nếu bạn đi lang thang vào Rừng Ngọc Lục Bảo, bạn có phiền mang cho tôi một bó hoa asters trắng không? Bên dưới trái đất của nó là nơi bạn bè tôi yên nghỉ, những đứa con của tôi, và một phiên bản của tôi từ rất lâu rồi."
+    },
+    "image": "/characters/LadyNifle.png",
+    "splash": "/characters/LadyNifle.png",
+    "skills": [],
+    "build": {
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
+    },
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
   },
   {
     "name": {
@@ -310,16 +167,43 @@
       "vi": "Lynn"
     },
     "slug": "lynn",
-    "role": "Support",
-    "weapon": "Staff",
+    "role": "Vanguard",
+    "weapon": "Sword",
     "rarity": "4★",
-    "element": "Light",
+    "element": "Unknown",
     "overview": {
-      "en": "A support character with light-based healing abilities. Lynn provides essential support to her allies.",
-      "vi": "Một nhân vật hỗ trợ với khả năng hồi máu dựa trên ánh sáng. Lynn cung cấp hỗ trợ thiết yếu cho đồng minh."
+      "en": "Mẹo ư? Mẹo duy nhất tôi có là không có vấn đề nào mà một cú đấm tốt không thể giải quyết được. Nếu không được, hãy tung thêm một cú nữa.",
+      "vi": "Mẹo ư? Mẹo duy nhất tôi có là không có vấn đề nào mà một cú đấm tốt không thể giải quyết được. Nếu không được, hãy tung thêm một cú nữa."
     },
-    "image": "/characters/webp/lynn.webp",
-    "splash": "/characters/lynn.svg",
+    "image": "/characters/Lynn.png",
+    "splash": "/characters/Lynn.png",
+    "skills": [],
+    "build": {
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
+    },
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
+  },
+  {
+    "name": {
+      "en": "Margie",
+      "vi": "Margie"
+    },
+    "slug": "margie",
+    "role": "Vanguard",
+    "weapon": "Sword",
+    "rarity": "4★",
+    "element": "Ice",
+    "overview": {
+      "en": "Cái gì?! Chắc hẳn bạn đã nghe danh hiệu 'Công chúa Rabbitsy' của tôi rồi phải không? Cứ gọi tôi là Margie. Không có công chúa ở đây cả; chỉ là một người nhặt rác nhỏ từ Icelake thôi.",
+      "vi": "Cái gì?! Chắc hẳn bạn đã nghe danh hiệu 'Công chúa Rabbitsy' của tôi rồi phải không? Cứ gọi tôi là Margie. Không có công chúa ở đây cả; chỉ là một người nhặt rác nhỏ từ Icelake thôi."
+    },
+    "image": "/characters/Margie.png",
+    "splash": "/characters/Margie.png",
     "skills": [],
     "build": {
       "weapons": [],
@@ -334,19 +218,46 @@
   {
     "name": {
       "en": "Outsider",
-      "vi": "Người Ngoài Cuộc"
+      "vi": "Outsider"
     },
     "slug": "outsider",
     "role": "Vanguard",
     "weapon": "Sword",
-    "rarity": "5★",
-    "element": "Dark",
+    "rarity": "4★",
+    "element": "Unknown",
     "overview": {
-      "en": "A mysterious outsider who discovered Fina in the sewers of Islake. This character represents the player's perspective in the world of Duet Night Abyss.",
-      "vi": "Một người ngoài cuộc bí ẩn đã phát hiện Fina trong cống rãnh của Islake. Nhân vật này đại diện cho góc nhìn của người chơi trong thế giới Duet Night Abyss."
+      "en": "Đây rồi. Cuối cùng tôi cũng đã hoàn thành hết việc vặt của mình và hoàn toàn kiệt sức, nhưng tôi chỉ kiếm được vài đồng... Urgh... Tôi đã cho các bạn quá nhiều rồi.",
+      "vi": "Đây rồi. Cuối cùng tôi cũng đã hoàn thành hết việc vặt của mình và hoàn toàn kiệt sức, nhưng tôi chỉ kiếm được vài đồng... Urgh... Tôi đã cho các bạn quá nhiều rồi."
     },
-    "image": "/characters/webp/outsider.webp",
-    "splash": "/characters/outsider.svg",
+    "image": "/characters/Outsider.png",
+    "splash": "/characters/Outsider.png",
+    "skills": [],
+    "build": {
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
+    },
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
+  },
+  {
+    "name": {
+      "en": "Phantasio",
+      "vi": "Phantasio"
+    },
+    "slug": "phantasio",
+    "role": "Vanguard",
+    "weapon": "Sword",
+    "rarity": "4★",
+    "element": "Unknown",
+    "overview": {
+      "en": "Chúng ta sẽ gặp nhau trong giờ phút u ám nhất của màn đêm, để em không phải hét lên khi nhìn thấy khuôn mặt bị tàn phá khủng khiếp của ta.",
+      "vi": "Chúng ta sẽ gặp nhau trong giờ phút u ám nhất của màn đêm, để em không phải hét lên khi nhìn thấy khuôn mặt bị tàn phá khủng khiếp của ta."
+    },
+    "image": "/characters/Phantasio.png",
+    "splash": "/characters/Phantasio.png",
     "skills": [],
     "build": {
       "weapons": [],
@@ -364,16 +275,124 @@
       "vi": "Psyche"
     },
     "slug": "psyche",
-    "role": "Support",
-    "weapon": "Staff",
+    "role": "Vanguard",
+    "weapon": "Sword",
     "rarity": "4★",
-    "element": "Psychic",
+    "element": "Unknown",
     "overview": {
-      "en": "A support character with psychic abilities. Psyche provides mental support and mind-based attacks.",
-      "vi": "Một nhân vật hỗ trợ với khả năng tâm linh. Psyche cung cấp hỗ trợ tinh thần và tấn công dựa trên tâm trí."
+      "en": "Sân trong tại nhà Hypnos trông hơi cằn cỗi chỉ với vài cây xanh, vì vậy tôi đã trồng một vài bông hoa trắng ở đó.",
+      "vi": "Sân trong tại nhà Hypnos trông hơi cằn cỗi chỉ với vài cây xanh, vì vậy tôi đã trồng một vài bông hoa trắng ở đó."
     },
-    "image": "/characters/webp/psyche.webp",
-    "splash": "/characters/psyche.svg",
+    "image": "/characters/Spyche.png",
+    "splash": "/characters/Spyche.png",
+    "skills": [],
+    "build": {
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
+    },
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
+  },
+  {
+    "name": {
+      "en": "Randy",
+      "vi": "Randy"
+    },
+    "slug": "randy",
+    "role": "Vanguard",
+    "weapon": "Sword",
+    "rarity": "4★",
+    "element": "Light",
+    "overview": {
+      "en": "Hãy lắng nghe những chiếc giường hát, đó là nơi trú ẩn, nơi mà những linh hồn mệt mỏi tìm thấy những thánh địa dễ dàng trên mái nhà, nơi những lo lắng không còn tồn tại. Trong những khu vườn buổi chiều, ánh sáng mặt trời dịu dàng nhảy múa và tận hưởng bản giao hưởng của những giấc mơ ngọt ngào...",
+      "vi": "Hãy lắng nghe những chiếc giường hát, đó là nơi trú ẩn, nơi mà những linh hồn mệt mỏi tìm thấy những thánh địa dễ dàng trên mái nhà, nơi những lo lắng không còn tồn tại. Trong những khu vườn buổi chiều, ánh sáng mặt trời dịu dàng nhảy múa và tận hưởng bản giao hưởng của những giấc mơ ngọt ngào..."
+    },
+    "image": "/characters/Randy.png",
+    "splash": "/characters/Randy.png",
+    "skills": [],
+    "build": {
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
+    },
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
+  },
+  {
+    "name": {
+      "en": "Rebecca",
+      "vi": "Rebecca"
+    },
+    "slug": "rebecca",
+    "role": "Vanguard",
+    "weapon": "Sword",
+    "rarity": "4★",
+    "element": "Water",
+    "overview": {
+      "en": "Tình yêu giống như nước hoa, nó hôn và ôm lấy từng thành phần, nuốt chửng và hấp thụ hương thơm của chúng, và cuối cùng hòa quyện với chúng để tạo ra một mùi hương lâu dài...",
+      "vi": "Tình yêu giống như nước hoa, nó hôn và ôm lấy từng thành phần, nuốt chửng và hấp thụ hương thơm của chúng, và cuối cùng hòa quyện với chúng để tạo ra một mùi hương lâu dài..."
+    },
+    "image": "/characters/Rebecca.png",
+    "splash": "/characters/Rebecca.png",
+    "skills": [],
+    "build": {
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
+    },
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
+  },
+  {
+    "name": {
+      "en": "Rhythm",
+      "vi": "Rhythm"
+    },
+    "slug": "rhythm",
+    "role": "Vanguard",
+    "weapon": "Sword",
+    "rarity": "4★",
+    "element": "Unknown",
+    "overview": {
+      "en": "Tuần tra hoàn tất. Không có dấu hiệu của các sinh vật nguy hiểm, thiệt hại về cấu trúc, hoặc các dấu hiệu đáng ngờ. Các hoạt động thường lệ có thể tiếp tục mà không bị gián đoạn. Báo cáo kết thúc.",
+      "vi": "Tuần tra hoàn tất. Không có dấu hiệu của các sinh vật nguy hiểm, thiệt hại về cấu trúc, hoặc các dấu hiệu đáng ngờ. Các hoạt động thường lệ có thể tiếp tục mà không bị gián đoạn. Báo cáo kết thúc."
+    },
+    "image": "/characters/Rhythm.png",
+    "splash": "/characters/Rhythm.png",
+    "skills": [],
+    "build": {
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
+    },
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
+  },
+  {
+    "name": {
+      "en": "Sibylle",
+      "vi": "Sibylle"
+    },
+    "slug": "sibylle",
+    "role": "Vanguard",
+    "weapon": "Sword",
+    "rarity": "4★",
+    "element": "Unknown",
+    "overview": {
+      "en": "Tôi biết những gì bạn muốn hỏi, nhưng bạn chưa đủ mạnh mẽ để đảm bảo câu trả lời của tôi. Vì vậy, hãy hạ vũ khí xuống; đó là lời khuyên tử tế nhất mà tôi có thể đưa ra.",
+      "vi": "Tôi biết những gì bạn muốn hỏi, nhưng bạn chưa đủ mạnh mẽ để đảm bảo câu trả lời của tôi. Vì vậy, hãy hạ vũ khí xuống; đó là lời khuyên tử tế nhất mà tôi có thể đưa ra."
+    },
+    "image": "/characters/Sibylle.png",
+    "splash": "/characters/Sibylle.png",
     "skills": [],
     "build": {
       "weapons": [],
@@ -394,597 +413,40 @@
     "role": "Vanguard",
     "weapon": "Sword",
     "rarity": "4★",
-    "element": "Fire",
+    "element": "Unknown",
     "overview": {
-      "en": "A mischievous character from the Republic of Luca who enjoys playing games and challenges. Tabethe is known for her playful nature and imitation games.",
-      "vi": "Một nhân vật tinh nghịch từ Cộng hòa Luca thích chơi trò chơi và thử thách. Tabethe được biết đến với tính cách vui tươi và trò chơi bắt chước."
+      "en": "Đừng lo lắng, Ác quỷ Tabethe a.k.a Bàn Tay Đỏ không bao giờ ăn trộm của những người công bằng và trung thực. Hay có lẽ... bạn nằm trong danh sách những đứa trẻ hư hỏng?",
+      "vi": "Đừng lo lắng, Ác quỷ Tabethe a.k.a Bàn Tay Đỏ không bao giờ ăn trộm của những người công bằng và trung thực. Hay có lẽ... bạn nằm trong danh sách những đứa trẻ hư hỏng?"
     },
-    "image": "/characters/webp/tabethe.webp",
-    "splash": "/characters/tabethe.svg",
-    "skills": [
-      {
-        "name": {
-          "en": "Imitation Game",
-          "vi": "Trò Chơi Bắt Chước"
-        },
-        "description": {
-          "en": "Copies the last ability used by an enemy and uses it against them.",
-          "vi": "Sao chép khả năng cuối cùng được sử dụng bởi kẻ thù và sử dụng nó chống lại chúng."
-        },
-        "type": "active",
-        "cooldown": "4 turns",
-        "cost": "3 MP"
-      },
-      {
-        "name": {
-          "en": "Wallet Thief",
-          "vi": "Kẻ Trộm Ví"
-        },
-        "description": {
-          "en": "Steals resources from enemies, dealing damage and gaining MP.",
-          "vi": "Đánh cắp tài nguyên từ kẻ thù, gây sát thương và hồi MP."
-        },
-        "type": "active",
-        "cooldown": "3 turns",
-        "cost": "2 MP"
-      }
-    ],
+    "image": "/characters/Tabethe.png",
+    "splash": "/characters/Tabethe.png",
+    "skills": [],
     "build": {
-      "weapons": [
-        "Trickster's Blade",
-        "Firebrand Sword",
-        "Mimic's Edge"
-      ],
-      "artifacts": [
-        "Game Master's Crown",
-        "Fire Lord's Crown",
-        "Trickster's Charm"
-      ],
-      "statPriority": [
-        "Attack%",
-        "Crit Rate",
-        "Fire Damage",
-        "MP Regen"
-      ]
+      "weapons": [],
+      "artifacts": [],
+      "statPriority": []
     },
-    "synergy": [
-      {
-        "partner": "Berenica",
-        "reason": {
-          "en": "Both from Republic of Luca with Fire synergy",
-          "vi": "Cả hai đều từ Cộng hòa Luca với hiệu ứng Lửa"
-        }
-      }
-    ],
-    "pros": [
-      {
-        "en": "Versatile ability copying",
-        "vi": "Sao chép khả năng linh hoạt"
-      },
-      {
-        "en": "Resource management",
-        "vi": "Quản lý tài nguyên"
-      },
-      {
-        "en": "Playful and unpredictable",
-        "vi": "Vui tươi và không thể đoán trước"
-      }
-    ],
-    "cons": [
-      {
-        "en": "Relies on enemy abilities",
-        "vi": "Phụ thuộc vào khả năng kẻ thù"
-      },
-      {
-        "en": "Inconsistent damage output",
-        "vi": "Sát thương không ổn định"
-      }
-    ],
-    "recommendedWeapons": [
-      {
-        "name": "Trickster's Blade",
-        "slug": "tricksters-blade",
-        "priority": "High"
-      },
-      {
-        "name": "Judgement Edge",
-        "slug": "judgement-edge",
-        "priority": "Medium"
-      },
-      {
-        "name": "Maid's Blade",
-        "slug": "maids-blade",
-        "priority": "Low"
-      }
-    ]
+    "synergy": [],
+    "pros": [],
+    "cons": [],
+    "recommendedWeapons": []
   },
   {
     "name": {
       "en": "Truffle and Filbert",
-      "vi": "Truffle và Filbert"
+      "vi": "Truffle and Filbert"
     },
     "slug": "truffle-and-filbert",
-    "role": "Support",
-    "weapon": "Staff",
-    "rarity": "4★",
-    "element": "Light",
-    "overview": {
-      "en": "A character from the Elysian Church who believes that a good meal can uplift the soul just as much as prayer. Truffle and Filbert combines spiritual support with culinary wisdom.",
-      "vi": "Một nhân vật từ Giáo hội Elysian tin rằng một bữa ăn ngon có thể nâng cao tinh thần cũng như cầu nguyện. Truffle và Filbert kết hợp hỗ trợ tinh thần với trí tuệ ẩm thực."
-    },
-    "image": "/characters/webp/truffle-and-filbert.webp",
-    "splash": "/characters/truffle-and-filbert.svg",
-    "skills": [
-      {
-        "name": {
-          "en": "Soul Feast",
-          "vi": "Bữa Tiệc Tinh Thần"
-        },
-        "description": {
-          "en": "Heals all allies for 120% of attack power and removes debuffs.",
-          "vi": "Hồi máu tất cả đồng minh 120% sức tấn công và loại bỏ debuff."
-        },
-        "type": "active",
-        "cooldown": "4 turns",
-        "cost": "3 MP"
-      },
-      {
-        "name": {
-          "en": "Prayer vs Dining",
-          "vi": "Cầu Nguyện vs Ăn Uống"
-        },
-        "description": {
-          "en": "Passive ability that increases healing effectiveness by 25% when health is below 50%.",
-          "vi": "Khả năng thụ động tăng hiệu quả hồi máu 25% khi máu dưới 50%."
-        },
-        "type": "passive"
-      }
-    ],
-    "build": {
-      "weapons": [
-        "Culinary Staff",
-        "Light's Blessing",
-        "Elysian Scepter"
-      ],
-      "artifacts": [
-        "Chef's Apron",
-        "Light Lord's Crown",
-        "Soul Nourisher"
-      ],
-      "statPriority": [
-        "Healing Power",
-        "Health%",
-        "Light Damage",
-        "MP Regen"
-      ]
-    },
-    "synergy": [
-      {
-        "partner": "Luna",
-        "reason": {
-          "en": "Double healing support for maximum team survivability",
-          "vi": "Hỗ trợ hồi máu kép để tối đa hóa khả năng sống sót của đội"
-        }
-      }
-    ],
-    "pros": [
-      {
-        "en": "Excellent healing capabilities",
-        "vi": "Khả năng hồi máu tuyệt vời"
-      },
-      {
-        "en": "Debuff removal",
-        "vi": "Loại bỏ debuff"
-      },
-      {
-        "en": "Strong passive healing boost",
-        "vi": "Tăng hồi máu thụ động mạnh"
-      }
-    ],
-    "cons": [
-      {
-        "en": "Low damage output",
-        "vi": "Sát thương thấp"
-      },
-      {
-        "en": "Requires MP management",
-        "vi": "Cần quản lý MP"
-      }
-    ],
-    "recommendedWeapons": [
-      {
-        "name": "Culinary Staff",
-        "slug": "culinary-staff",
-        "priority": "High"
-      },
-      {
-        "name": "Ice Staff",
-        "slug": "ice-staff",
-        "priority": "Medium"
-      }
-    ]
-  },
-  {
-    "name": {
-      "en": "Yuming",
-      "vi": "Yuming"
-    },
-    "slug": "yuming",
-    "role": "Vanguard",
-    "weapon": "Sword",
-    "rarity": "5★",
-    "element": "Ice",
-    "overview": {
-      "en": "A skilled warrior with ice-based abilities. Yuming excels in close combat with devastating sword techniques and ice abilities.",
-      "vi": "Một chiến binh tài năng với khả năng băng. Yuming xuất sắc trong chiến đấu cận chiến với kỹ thuật kiếm tàn khốc và khả năng băng."
-    },
-    "image": "/characters/webp/yuming.webp",
-    "splash": "/characters/yuming.svg",
-    "skills": [],
-    "build": {
-      "weapons": [],
-      "artifacts": [],
-      "statPriority": []
-    },
-    "synergy": [],
-    "pros": [],
-    "cons": [],
-    "recommendedWeapons": []
-  },
-  {
-    "name": {
-      "en": "Phoxhunter",
-      "vi": "Phoxhunter"
-    },
-    "slug": "phoxhunter",
-    "role": "Annihilator",
-    "weapon": "Sniper",
-    "rarity": "5★",
-    "element": "Fire",
-    "overview": {
-      "en": "A mysterious hunter with white hair and red eyes. Phoxhunter wields powerful fire-based abilities and is known for opening their eyes before dawn.",
-      "vi": "Một thợ săn bí ẩn với tóc trắng và mắt đỏ. Phoxhunter sử dụng khả năng lửa mạnh mẽ và được biết đến với việc mở mắt trước bình minh."
-    },
-    "image": "/characters/phoenix.svg",
-    "splash": "/characters/phoenix.svg",
-    "skills": [
-      {
-        "name": {
-          "en": "Dawn's Eye",
-          "vi": "Mắt Bình Minh"
-        },
-        "description": {
-          "en": "Unleashes a devastating fire attack that deals massive damage to all enemies.",
-          "vi": "Phóng ra một đòn tấn công lửa tàn khốc gây sát thương lớn cho tất cả kẻ thù."
-        },
-        "type": "active",
-        "cooldown": "5 turns",
-        "cost": "4 MP"
-      },
-      {
-        "name": {
-          "en": "Phoenix Flames",
-          "vi": "Ngọn Lửa Phượng Hoàng"
-        },
-        "description": {
-          "en": "Creates a ring of fire that burns enemies over time.",
-          "vi": "Tạo ra một vòng lửa đốt cháy kẻ thù theo thời gian."
-        },
-        "type": "active",
-        "cooldown": "4 turns",
-        "cost": "3 MP"
-      }
-    ],
-    "build": {
-      "weapons": [
-        "Phoenix Rifle",
-        "Dawn's Edge",
-        "Fire Hunter"
-      ],
-      "artifacts": [
-        "Phoenix Feather",
-        "Dawn's Crown",
-        "Hunter's Mark"
-      ],
-      "statPriority": [
-        "Attack%",
-        "Crit Rate",
-        "Fire Damage",
-        "Crit Damage"
-      ]
-    },
-    "synergy": [],
-    "pros": [
-      {
-        "en": "Extremely high damage output",
-        "vi": "Sát thương cực cao"
-      },
-      {
-        "en": "Strong AoE capabilities",
-        "vi": "Khả năng AoE mạnh"
-      },
-      {
-        "en": "Unique fire mechanics",
-        "vi": "Cơ chế lửa độc đáo"
-      }
-    ],
-    "cons": [
-      {
-        "en": "High MP consumption",
-        "vi": "Tiêu thụ MP cao"
-      },
-      {
-        "en": "Long cooldowns",
-        "vi": "Thời gian hồi chiêu dài"
-      }
-    ],
-    "recommendedWeapons": [
-      {
-        "name": "Phoenix Rifle",
-        "slug": "phoenix-rifle",
-        "priority": "High"
-      },
-      {
-        "name": "Abyssal Rifle",
-        "slug": "abyssal-rifle",
-        "priority": "High"
-      }
-    ]
-  },
-  {
-    "name": {
-      "en": "Snow",
-      "vi": "Snow"
-    },
-    "slug": "snow",
-    "role": "Support",
-    "weapon": "Staff",
-    "rarity": "4★",
-    "element": "Ice",
-    "overview": {
-      "en": "A support character with ice-based abilities. Snow provides defensive support and crowd control through ice magic.",
-      "vi": "Một nhân vật hỗ trợ với khả năng băng. Snow cung cấp hỗ trợ phòng thủ và kiểm soát đám đông thông qua phép thuật băng."
-    },
-    "image": "/characters/storm.svg",
-    "splash": "/characters/storm.svg",
-    "skills": [
-      {
-        "name": {
-          "en": "Ice Barrier",
-          "vi": "Rào Chắn Băng"
-        },
-        "description": {
-          "en": "Creates a protective ice barrier that reduces incoming damage.",
-          "vi": "Tạo ra một rào chắn băng bảo vệ giảm sát thương đến."
-        },
-        "type": "active",
-        "cooldown": "3 turns",
-        "cost": "2 MP"
-      },
-      {
-        "name": {
-          "en": "Frozen Ground",
-          "vi": "Mặt Đất Đóng Băng"
-        },
-        "description": {
-          "en": "Freezes the battlefield, slowing all enemies.",
-          "vi": "Đóng băng chiến trường, làm chậm tất cả kẻ thù."
-        },
-        "type": "active",
-        "cooldown": "4 turns",
-        "cost": "3 MP"
-      }
-    ],
-    "build": {
-      "weapons": [
-        "Ice Staff",
-        "Frozen Heart",
-        "Snow's Blessing"
-      ],
-      "artifacts": [
-        "Ice Crystal",
-        "Frozen Crown",
-        "Winter's Embrace"
-      ],
-      "statPriority": [
-        "Health%",
-        "Ice Damage",
-        "MP Regen",
-        "Defense%"
-      ]
-    },
-    "synergy": [],
-    "pros": [
-      {
-        "en": "Excellent crowd control",
-        "vi": "Kiểm soát đám đông tuyệt vời"
-      },
-      {
-        "en": "Strong defensive support",
-        "vi": "Hỗ trợ phòng thủ mạnh"
-      },
-      {
-        "en": "Good survivability",
-        "vi": "Khả năng sống sót tốt"
-      }
-    ],
-    "cons": [
-      {
-        "en": "Low damage output",
-        "vi": "Sát thương thấp"
-      },
-      {
-        "en": "Weak against Fire enemies",
-        "vi": "Yếu trước kẻ thù hệ Lửa"
-      }
-    ],
-    "recommendedWeapons": []
-  },
-  {
-    "name": {
-      "en": "Fushu",
-      "vi": "Fushu"
-    },
-    "slug": "fushu",
-    "role": "Vanguard",
-    "weapon": "Spear",
-    "rarity": "5★",
-    "element": "Electro",
-    "overview": {
-      "en": "A powerful warrior from the Republic of Luca wielding a spear with lightning abilities. Fushu is known for their swift and precise attacks.",
-      "vi": "Một chiến binh mạnh mẽ từ Cộng hòa Luca sử dụng giáo với khả năng sét. Fushu được biết đến với những đòn tấn công nhanh nhẹn và chính xác."
-    },
-    "image": "/characters/calcharo.svg",
-    "splash": "/characters/webp/splash/calcharo_big.webp",
-    "skills": [
-      {
-        "name": {
-          "en": "Lightning Strike",
-          "vi": "Đòn Sét"
-        },
-        "description": {
-          "en": "Strikes with lightning speed, dealing massive Electro damage to a single target.",
-          "vi": "Tấn công với tốc độ sét, gây sát thương Electro lớn cho một mục tiêu."
-        },
-        "type": "active",
-        "cooldown": "3 turns",
-        "cost": "2 MP"
-      },
-      {
-        "name": {
-          "en": "Thunder Storm",
-          "vi": "Bão Sét"
-        },
-        "description": {
-          "en": "Creates a storm of lightning that hits multiple enemies.",
-          "vi": "Tạo ra một cơn bão sét tấn công nhiều kẻ thù."
-        },
-        "type": "active",
-        "cooldown": "4 turns",
-        "cost": "3 MP"
-      }
-    ],
-    "build": {
-      "weapons": [
-        "Lightning Spear",
-        "Thunder's Edge",
-        "Storm Caller"
-      ],
-      "artifacts": [
-        "Lightning Rod",
-        "Thunder Crown",
-        "Storm's Fury"
-      ],
-      "statPriority": [
-        "Attack%",
-        "Crit Rate",
-        "Electro Damage",
-        "Speed"
-      ]
-    },
-    "synergy": [],
-    "pros": [
-      {
-        "en": "High single-target damage",
-        "vi": "Sát thương mục tiêu đơn cao"
-      },
-      {
-        "en": "Fast attack speed",
-        "vi": "Tốc độ tấn công nhanh"
-      },
-      {
-        "en": "Strong Electro synergy",
-        "vi": "Hiệu ứng Electro mạnh"
-      }
-    ],
-    "cons": [
-      {
-        "en": "Limited AoE damage",
-        "vi": "Sát thương AoE hạn chế"
-      },
-      {
-        "en": "Weak against Earth enemies",
-        "vi": "Yếu trước kẻ thù hệ Đất"
-      }
-    ],
-    "recommendedWeapons": [
-      {
-        "name": "Lightning Spear",
-        "slug": "lightning-spear",
-        "priority": "High"
-      }
-    ]
-  },
-  {
-    "name": {
-      "en": "Echo",
-      "vi": "Echo"
-    },
-    "slug": "echo",
-    "role": "Support",
-    "weapon": "Staff",
-    "rarity": "4★",
-    "element": "Sound",
-    "overview": {
-      "en": "A mysterious character with sound-based abilities. Echo uses sonic attacks and healing vibrations.",
-      "vi": "Một nhân vật bí ẩn với khả năng âm thanh. Echo sử dụng tấn công âm thanh và rung động hồi máu."
-    },
-    "image": "/characters/echo.svg",
-    "splash": "/characters/echo.svg",
-    "skills": [],
-    "build": {
-      "weapons": [],
-      "artifacts": [],
-      "statPriority": []
-    },
-    "synergy": [],
-    "pros": [],
-    "cons": [],
-    "recommendedWeapons": []
-  },
-  {
-    "name": {
-      "en": "Iris",
-      "vi": "Iris"
-    },
-    "slug": "iris",
-    "role": "Annihilator",
-    "weapon": "Bow",
-    "rarity": "5★",
-    "element": "Light",
-    "overview": {
-      "en": "A skilled archer with light-based abilities. Iris excels at long-range combat with precision and grace.",
-      "vi": "Một cung thủ tài năng với khả năng ánh sáng. Iris xuất sắc trong chiến đấu tầm xa với độ chính xác và duyên dáng."
-    },
-    "image": "/characters/iris.svg",
-    "splash": "/characters/iris.svg",
-    "skills": [],
-    "build": {
-      "weapons": [],
-      "artifacts": [],
-      "statPriority": []
-    },
-    "synergy": [],
-    "pros": [],
-    "cons": [],
-    "recommendedWeapons": []
-  },
-  {
-    "name": {
-      "en": "Kai",
-      "vi": "Kai"
-    },
-    "slug": "kai",
     "role": "Vanguard",
     "weapon": "Sword",
     "rarity": "4★",
-    "element": "Wind",
+    "element": "Unknown",
     "overview": {
-      "en": "A swift warrior with wind-based abilities. Kai moves with incredible speed and agility.",
-      "vi": "Một chiến binh nhanh nhẹn với khả năng gió. Kai di chuyển với tốc độ và sự nhanh nhẹn đáng kinh ngạc."
+      "en": "Xin chào! Tôi nghe nói rằng cầu nguyện có thể làm cho tâm hồn cảm thấy phấn chấn. Cá nhân tôi nghĩ rằng một bữa ăn ngon cũng có tác dụng tương tự. Nhưng cái nào hiệu quả hơn, cầu nguyện hay ăn uống?",
+      "vi": "Xin chào! Tôi nghe nói rằng cầu nguyện có thể làm cho tâm hồn cảm thấy phấn chấn. Cá nhân tôi nghĩ rằng một bữa ăn ngon cũng có tác dụng tương tự. Nhưng cái nào hiệu quả hơn, cầu nguyện hay ăn uống?"
     },
-    "image": "/characters/kai.svg",
-    "splash": "/characters/kai.svg",
+    "image": "/characters/truffeandfilbert.png",
+    "splash": "/characters/truffeandfilbert.png",
     "skills": [],
     "build": {
       "weapons": [],
@@ -998,182 +460,20 @@
   },
   {
     "name": {
-      "en": "Kalka",
-      "vi": "Kalka"
+      "en": "Yale and Oliver",
+      "vi": "Yale and Oliver"
     },
-    "slug": "kalka",
-    "role": "Support",
-    "weapon": "Staff",
-    "rarity": "4★",
-    "element": "Earth",
-    "overview": {
-      "en": "A wise healer with earth-based abilities. Kalka provides strong defensive support and healing.",
-      "vi": "Một thầy thuốc khôn ngoan với khả năng đất. Kalka cung cấp hỗ trợ phòng thủ mạnh và hồi máu."
-    },
-    "image": "/characters/kalka.svg",
-    "splash": "/characters/kalka.svg",
-    "skills": [],
-    "build": {
-      "weapons": [],
-      "artifacts": [],
-      "statPriority": []
-    },
-    "synergy": [],
-    "pros": [],
-    "cons": [],
-    "recommendedWeapons": []
-  },
-  {
-    "name": {
-      "en": "Luna",
-      "vi": "Luna"
-    },
-    "slug": "luna",
-    "role": "Support",
-    "weapon": "Staff",
-    "rarity": "5★",
-    "element": "Moon",
-    "overview": {
-      "en": "A mystical healer with moon-based abilities. Luna provides powerful healing and support magic.",
-      "vi": "Một thầy thuốc thần bí với khả năng mặt trăng. Luna cung cấp phép thuật hồi máu và hỗ trợ mạnh mẽ."
-    },
-    "image": "/characters/luna.svg",
-    "splash": "/characters/luna.svg",
-    "skills": [],
-    "build": {
-      "weapons": [],
-      "artifacts": [],
-      "statPriority": []
-    },
-    "synergy": [],
-    "pros": [],
-    "cons": [],
-    "recommendedWeapons": []
-  },
-  {
-    "name": {
-      "en": "Nova",
-      "vi": "Nova"
-    },
-    "slug": "nova",
-    "role": "Annihilator",
-    "weapon": "Sniper",
-    "rarity": "5★",
-    "element": "Fire",
-    "overview": {
-      "en": "A powerful marksman with explosive fire abilities. Nova deals devastating damage from long range.",
-      "vi": "Một xạ thủ mạnh mẽ với khả năng lửa nổ. Nova gây sát thương tàn khốc từ tầm xa."
-    },
-    "image": "/characters/nova.svg",
-    "splash": "/characters/nova.svg",
-    "skills": [],
-    "build": {
-      "weapons": [],
-      "artifacts": [],
-      "statPriority": []
-    },
-    "synergy": [],
-    "pros": [],
-    "cons": [],
-    "recommendedWeapons": []
-  },
-  {
-    "name": {
-      "en": "Raven",
-      "vi": "Raven"
-    },
-    "slug": "raven",
+    "slug": "yale-and-oliver",
     "role": "Vanguard",
     "weapon": "Sword",
     "rarity": "4★",
-    "element": "Dark",
+    "element": "Unknown",
     "overview": {
-      "en": "A stealthy warrior with dark abilities. Raven excels at quick strikes and shadow magic.",
-      "vi": "Một chiến binh lén lút với khả năng bóng tối. Raven xuất sắc trong các đòn tấn công nhanh và phép thuật bóng tối."
+      "en": "Yale: Peter Piper đã hái một lạng ớt ngâm... Oliver: Nó là 'Peter Piper đã hái một lạng ớt ngâm.' Thôi nào, Yale, cố lên nào!",
+      "vi": "Yale: Peter Piper đã hái một lạng ớt ngâm... Oliver: Nó là 'Peter Piper đã hái một lạng ớt ngâm.' Thôi nào, Yale, cố lên nào!"
     },
-    "image": "/characters/raven.svg",
-    "splash": "/characters/raven.svg",
-    "skills": [],
-    "build": {
-      "weapons": [],
-      "artifacts": [],
-      "statPriority": []
-    },
-    "synergy": [],
-    "pros": [],
-    "cons": [],
-    "recommendedWeapons": []
-  },
-  {
-    "name": {
-      "en": "Sophia",
-      "vi": "Sophia"
-    },
-    "slug": "sophia",
-    "role": "Support",
-    "weapon": "Staff",
-    "rarity": "5★",
-    "element": "Light",
-    "overview": {
-      "en": "A divine healer with pure light abilities. Sophia provides exceptional healing and protection.",
-      "vi": "Một thầy thuốc thần thánh với khả năng ánh sáng thuần khiết. Sophia cung cấp hồi máu và bảo vệ đặc biệt."
-    },
-    "image": "/characters/sophia.svg",
-    "splash": "/characters/sophia.svg",
-    "skills": [],
-    "build": {
-      "weapons": [],
-      "artifacts": [],
-      "statPriority": []
-    },
-    "synergy": [],
-    "pros": [],
-    "cons": [],
-    "recommendedWeapons": []
-  },
-  {
-    "name": {
-      "en": "Yuna",
-      "vi": "Yuna"
-    },
-    "slug": "yuna",
-    "role": "Annihilator",
-    "weapon": "Bow",
-    "rarity": "4★",
-    "element": "Water",
-    "overview": {
-      "en": "A skilled archer with water-based abilities. Yuna uses flowing water attacks and healing.",
-      "vi": "Một cung thủ tài năng với khả năng nước. Yuna sử dụng tấn công nước chảy và hồi máu."
-    },
-    "image": "/characters/yuna.svg",
-    "splash": "/characters/yuna.svg",
-    "skills": [],
-    "build": {
-      "weapons": [],
-      "artifacts": [],
-      "statPriority": []
-    },
-    "synergy": [],
-    "pros": [],
-    "cons": [],
-    "recommendedWeapons": []
-  },
-  {
-    "name": {
-      "en": "Zephyr",
-      "vi": "Zephyr"
-    },
-    "slug": "zephyr",
-    "role": "Vanguard",
-    "weapon": "Spear",
-    "rarity": "5★",
-    "element": "Wind",
-    "overview": {
-      "en": "A swift warrior with powerful wind abilities. Zephyr moves like the wind itself.",
-      "vi": "Một chiến binh nhanh nhẹn với khả năng gió mạnh mẽ. Zephyr di chuyển như chính cơn gió."
-    },
-    "image": "/characters/zephyr.svg",
-    "splash": "/characters/zephyr.svg",
+    "image": "/characters/YaleandOliver.png",
+    "splash": "/characters/YaleandOliver.png",
     "skills": [],
     "build": {
       "weapons": [],
