@@ -5,7 +5,10 @@ import {
   WEAPONS_QUERY, 
   WEAPON_BY_SLUG_QUERY,
   CHARACTER_SLUGS_QUERY,
-  WEAPON_SLUGS_QUERY
+  WEAPON_SLUGS_QUERY,
+  SEARCH_CHARACTERS_QUERY,
+  SEARCH_WEAPONS_QUERY,
+  UNIFIED_SEARCH_QUERY
 } from './queries'
 
 // Types (matching your existing structure)
@@ -81,6 +84,32 @@ export interface Weapon {
     critDamage?: number
   }
   recommendedCharacters?: string[]
+}
+
+// Search result types
+export interface SearchResult {
+  _id: string
+  name: MultilingualText
+  slug: {
+    _type: 'slug'
+    current: string
+  }
+  _type: 'character' | 'weapon'
+  image?: string
+  // Character specific fields
+  role?: string
+  weapon?: string
+  rarity?: string
+  element?: string
+  splash?: string
+  // Weapon specific fields
+  type?: string
+  description?: MultilingualText
+}
+
+export interface UnifiedSearchResults {
+  characters: SearchResult[]
+  weapons: SearchResult[]
 }
 
 // Data fetching functions - Sanity only
@@ -159,5 +188,76 @@ export async function getWeaponSlugs(): Promise<string[]> {
   } catch (error) {
     console.error('Failed to fetch weapon slugs from Sanity:', error)
     throw new Error('Unable to fetch weapon slugs. Please check your Sanity configuration.')
+  }
+}
+
+// Search functions
+export async function searchCharacters(searchTerm: string): Promise<SearchResult[]> {
+  try {
+    if (!searchTerm.trim()) return []
+    
+    const results = await sanityClient.fetch(SEARCH_CHARACTERS_QUERY, { 
+      searchTerm: searchTerm.toLowerCase() 
+    })
+    
+    return results.map((char: Record<string, unknown>) => ({
+      _id: char._id,
+      name: char.name,
+      slug: char.slug,
+      _type: 'character' as const,
+      image: char.image,
+      role: char.role,
+      weapon: char.weapon,
+      rarity: char.rarity,
+      element: char.element,
+      splash: char.splash
+    }))
+  } catch (error) {
+    console.error('Failed to search characters:', error)
+    return []
+  }
+}
+
+export async function searchWeapons(searchTerm: string): Promise<SearchResult[]> {
+  try {
+    if (!searchTerm.trim()) return []
+    
+    const results = await sanityClient.fetch(SEARCH_WEAPONS_QUERY, { 
+      searchTerm: searchTerm.toLowerCase() 
+    })
+    
+    return results.map((weapon: Record<string, unknown>) => ({
+      _id: weapon._id,
+      name: weapon.name,
+      slug: weapon.slug,
+      _type: 'weapon' as const,
+      image: weapon.image,
+      type: weapon.type,
+      rarity: weapon.rarity,
+      description: weapon.description
+    }))
+  } catch (error) {
+    console.error('Failed to search weapons:', error)
+    return []
+  }
+}
+
+export async function unifiedSearch(searchTerm: string): Promise<UnifiedSearchResults> {
+  try {
+    if (!searchTerm.trim()) {
+      return { characters: [], weapons: [] }
+    }
+    
+    const results = await sanityClient.fetch(UNIFIED_SEARCH_QUERY, { 
+      searchTerm: searchTerm.toLowerCase() 
+    })
+    
+    return {
+      characters: results.characters || [],
+      weapons: results.weapons || []
+    }
+  } catch (error) {
+    console.error('Failed to perform unified search:', error)
+    return { characters: [], weapons: [] }
   }
 }

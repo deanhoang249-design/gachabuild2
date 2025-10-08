@@ -129,3 +129,90 @@ export const CHARACTER_SLUGS_QUERY = groq`
 export const WEAPON_SLUGS_QUERY = groq`
   *[_type == 'weapon'].slug.current
 `
+
+// Search queries for unified search functionality
+export const SEARCH_CHARACTERS_QUERY = groq`
+  *[_type == 'character' && (
+    name.en match $searchTerm + "*" ||
+    name.vi match $searchTerm + "*" ||
+    role match $searchTerm + "*" ||
+    element match $searchTerm + "*" ||
+    weapon match $searchTerm + "*" ||
+    overview.en match $searchTerm + "*" ||
+    overview.vi match $searchTerm + "*"
+  )] | order(name.en asc) {
+    _id,
+    name,
+    slug,
+    role,
+    weapon,
+    rarity,
+    element,
+    image,
+    splash
+  }
+`
+
+export const SEARCH_WEAPONS_QUERY = groq`
+  *[_type == 'weapon' && (
+    name.en match $searchTerm + "*" ||
+    name.vi match $searchTerm + "*" ||
+    type match $searchTerm + "*" ||
+    description.en match $searchTerm + "*" ||
+    description.vi match $searchTerm + "*" ||
+    passive.en match $searchTerm + "*" ||
+    passive.vi match $searchTerm + "*"
+  )] | order(name.en asc) {
+    _id,
+    name,
+    slug,
+    type,
+    rarity,
+    image,
+    description
+  }
+`
+
+// Combined search query for both characters and weapons
+export const UNIFIED_SEARCH_QUERY = groq`
+  {
+    "characters": *[_type == 'character' && (
+      name.en match $searchTerm + "*" ||
+      name.vi match $searchTerm + "*" ||
+      role match $searchTerm + "*" ||
+      element match $searchTerm + "*" ||
+      weapon match $searchTerm + "*" ||
+      overview.en match $searchTerm + "*" ||
+      overview.vi match $searchTerm + "*"
+    )] | order(name.en asc) [0...8] {
+      _id,
+      name,
+      slug,
+      role,
+      weapon,
+      rarity,
+      element,
+      image,
+      splash,
+      "_type": "character"
+    },
+    "weapons": *[_type == 'weapon' && (
+      name.en match $searchTerm + "*" ||
+      name.vi match $searchTerm + "*" ||
+      type match $searchTerm + "*" ||
+      description.en match $searchTerm + "*" ||
+      description.vi match $searchTerm + "*" ||
+      passive.en match $searchTerm + "*" ||
+      passive.vi match $searchTerm + "*"
+    )] | order(name.en asc) [0...8] {
+      _id,
+      name,
+      slug,
+      type,
+      rarity,
+      image,
+      description,
+      "_type": "weapon"
+    }
+  }
+`

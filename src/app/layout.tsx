@@ -87,6 +87,45 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <StructuredData type="website" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Clean up browser extension attributes that cause hydration mismatches
+              (function() {
+                const cleanupAttributes = () => {
+                  const attributesToRemove = ['bis_skin_checked', 'data-bis-skinned', 'autofilled'];
+                  document.querySelectorAll('*').forEach(element => {
+                    attributesToRemove.forEach(attr => {
+                      if (element.hasAttribute(attr)) {
+                        element.removeAttribute(attr);
+                      }
+                    });
+                  });
+                };
+                
+                // Clean up immediately
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', cleanupAttributes);
+                } else {
+                  cleanupAttributes();
+                }
+                
+                // Clean up periodically
+                setInterval(cleanupAttributes, 1000);
+                
+                // Clean up on DOM mutations
+                if (typeof MutationObserver !== 'undefined') {
+                  const observer = new MutationObserver(cleanupAttributes);
+                  observer.observe(document.body, { 
+                    attributes: true, 
+                    subtree: true, 
+                    attributeFilter: ['bis_skin_checked', 'data-bis-skinned', 'autofilled']
+                  });
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

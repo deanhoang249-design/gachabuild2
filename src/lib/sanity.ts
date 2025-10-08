@@ -3,8 +3,8 @@ import { createClient } from '@sanity/client'
 export const sanityClient = createClient({
   projectId: process.env.SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.SANITY_DATASET || process.env.NEXT_PUBLIC_SANITY_DATASET!,
-  token: process.env.SANITY_API_TOKEN, // Use API token for now
-  useCdn: false, // Disable CDN temporarily to avoid caching issues
+  token: process.env.SANITY_API_TOKEN, // Use token for read access
+  useCdn: true, // Enable CDN for better performance
   apiVersion: process.env.SANITY_API_VERSION || process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-01-01',
 })
 

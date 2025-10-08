@@ -6,19 +6,19 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { getSearchSuggestions, SearchSuggestion, initializeSearchData } from '@/lib/simpleSearchData';
 import Image from 'next/image';
 
-interface SearchWithSuggestionsProps {
+interface OptimizedSearchWithSuggestionsProps {
   placeholder?: string;
   className?: string;
   onSearch?: (query: string) => void;
   origin?: string;
 }
 
-export default function SearchWithSuggestions({ 
+export default function OptimizedSearchWithSuggestions({ 
   placeholder = "Search characters and weapons...",
   className = "",
   onSearch,
   origin = 'tier-list'
-}: SearchWithSuggestionsProps) {
+}: OptimizedSearchWithSuggestionsProps) {
   const [query, setQuery] = useState('');
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);

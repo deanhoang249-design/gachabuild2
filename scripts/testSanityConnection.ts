@@ -4,10 +4,11 @@ import { createClient } from '@sanity/client'
 
 // Create a client for testing
 const sanityClient = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2eop0ymd',
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
-  useCdn: false,
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-01-01',
+  projectId: process.env.SANITY_PROJECT_ID || process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '2eop0ymd',
+  dataset: process.env.SANITY_DATASET || process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  token: process.env.SANITY_API_TOKEN, // Use token for read access
+  useCdn: true, // Enable CDN for better performance
+  apiVersion: process.env.SANITY_API_VERSION || process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-01-01',
 })
 
 async function testSanityConnection() {

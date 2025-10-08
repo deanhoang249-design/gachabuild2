@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "dev:studio": "next dev --turbopack",
-    "build": "next build",
-    "build:static": "STATIC_EXPORT=true next build",
-    "build:turbo": "next build --turbopack",
+    "build": "npm run generate:search-data && next build",
+    "build:static": "npm run generate:search-data && STATIC_EXPORT=true next build",
+    "build:turbo": "npm run generate:search-data && next build --turbopack",
     "start": "next start",
     "lint": "eslint",
     "studio": "sanity dev",
@@ -23,7 +23,8 @@
     "check:all-datasets": "ts-node scripts/checkAllDatasets.ts",
     "delete:problematic-characters": "ts-node scripts/deleteProblematicCharacters.ts",
     "delete:problematic-characters:execute": "ts-node scripts/deleteProblematicCharacters.ts --execute",
-    "clear:sanity": "ts-node scripts/clearAllSanityData.ts"
+    "clear:sanity": "ts-node scripts/clearAllSanityData.ts",
+    "generate:search-data": "ts-node scripts/generateSearchData.ts"
   },
   "engines": {
     "node": ">=18.0.0"

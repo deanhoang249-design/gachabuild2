@@ -1,11 +1,12 @@
 import { createRoot } from 'react-dom/client'
-import { createStudio } from 'sanity'
-import { config } from '../sanity.config'
+import { Studio } from 'sanity'
+import config from '../sanity.config'
 
-const studio = createStudio({
-  config,
-  basePath: '/studio'
-})
+const studio = (
+  <Studio
+    config={config}
+  />
+)
 
 const root = createRoot(document.getElementById('root')!)
 root.render(studio)
